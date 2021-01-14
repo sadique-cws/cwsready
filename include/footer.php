@@ -1,4 +1,9 @@
-
+    <footer style="background-color: #485461;
+    background-image: linear-gradient(315deg, #485461 0%, #28313b 74%); position:relative; bottom:0;" class="p-3">
+        <div class="container">
+            <h6 class="text-white">ajdfjka</h6>
+        </div>
+    </footer>
     <!-- JavaScript Bundle with Popper -->
     
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>

@@ -23,7 +23,7 @@ function callingRecords($table, $cond = null){
     global $connect;
     $array = [];
 
-    if($cond==null){
+    if($cond!=null){
         $query = mysqli_query($connect,"select * from $table where $cond");
     }
     else{

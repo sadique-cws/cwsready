@@ -1,14 +1,10 @@
-<<<<<<< HEAD
-=======
- 
- 
->>>>>>> f6bbe54 (student work)
+<?php include('include/config.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<<<<<<< HEAD
+
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
@@ -17,7 +13,7 @@
     
 </body>
 </html> 
-=======
+
     <title>CWS</title>
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -25,9 +21,9 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<div class="header" style="background-color: #485461;
+<div class="header sticky-top " style="background-color: #485461;
 background-image: linear-gradient(315deg, #485461 0%, #28313b 74%);">
-    <a class="menu-toggle rounded d-lg-none d-block" href="#">
+    <a class="menu-toggle rounded text-white d-lg-none d-block" href="#">
                 <i class="fa fa-bars fa-2x"></i>
             </a>
             <nav id="sidebar-wrapper">
@@ -57,8 +53,8 @@ background-image: linear-gradient(315deg, #485461 0%, #28313b 74%);">
             <a href="index.php" class="navbar-brand">CWS</a>
             <ul class="navbar-nav">
                 <li class="navbar-nav"><a href="" class="nav-link text-white">Home</a></li>
-                <li class="navbar-nav"><a href="" class="nav-link text-white">Login</a></li>
-                <li class="navbar-nav"><a href="" class="nav-link text-white btn-danger rounded-3">Apply Addmission</a></li>
+                <li class="navbar-nav"><a href="login.php" class="nav-link text-white">Login</a></li>
+                <li class="navbar-nav"><a href="apply.php" class="nav-link text-white btn-danger rounded-3">Apply Addmission</a></li>
             </ul>
         </div>
     </nav>
@@ -69,4 +65,3 @@ background-image: linear-gradient(315deg, #485461 0%, #28313b 74%);">
         </div>
     </div> -->
 </div>
->>>>>>> f6bbe54 (student work)

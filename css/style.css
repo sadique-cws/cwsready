@@ -122,6 +122,7 @@
   @media (max-width:1300){
       .sidebar-wrapper{
           display: none;
+          background-color: rgba(0, 0, 0, 0.418);
       }
       
       
