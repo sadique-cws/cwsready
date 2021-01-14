@@ -10,11 +10,19 @@
 <body>
 <?php include "header.php"?>
 <div class="container mt-5">
+    <div class="row mb-2">
+        <div class="col">
+            <p class="lead">User</p>
+        </div>
+        <div class="col">
+            <img src="../images/photo_2020-12-22_00-18-14.jpg" alt="" class="float-end rounded-circle me-3" style="width: 100px; height: 100px; object-fit: cover; border-radius: 50%">
+        </div>
+    </div>
     <table class="table table-stripped shadow-sm">
         <tr class="bg-secondary text-light text-capitalize">
             <th>S. NO</th>
             <th>course title</th>
-            <th>description</th>
+            <th>date of joining</th>
             <th>action</th>
         </tr>
     </table>
