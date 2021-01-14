@@ -42,7 +42,16 @@ function callingRecord($table,$cond){
     return $row = mysqli_fetch_array($query);
 }
 
-
+function countRecord($table,$cond=null){
+    global $connect;
+    $query = mysqli_query($connect,"select * from $table where $cond");
+    $count = mysqli_num_rows($query);
+    return $count;
+}
+function updateRecord($table,$fields, $cond=null){
+    global $connect;
+    $query = mysqli_query($connect,"update $table SET $fields where $cond");
+}
 //deleting data 
 function deleteRecord($table, $cond){
     global $connect;
