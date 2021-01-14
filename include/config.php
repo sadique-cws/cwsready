@@ -23,7 +23,7 @@ function callingRecords($table, $cond = null){
     global $connect;
     $array = [];
 
-    if($cond==null){
+    if($cond!=null){
         $query = mysqli_query($connect,"select * from $table where $cond");
     }
     else{
@@ -48,8 +48,9 @@ function countRecord($table,$cond=null){
     $count = mysqli_num_rows($query);
     return $count;
 }
-function updateRecord(){
-    
+function updateRecord($table,$fields, $cond=null){
+    global $connect;
+    $query = mysqli_query($connect,"update $table SET $fields where $cond");
 }
 //deleting data 
 function deleteRecord($table, $cond){
