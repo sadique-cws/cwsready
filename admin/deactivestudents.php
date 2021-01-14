@@ -26,7 +26,7 @@
         </tr>
 
         <?php
-        $students=callingRecords('students', 'status=2');
+        $students=callingRecords('students', 'status=3');
         foreach($students as $student){
             ?>
             <tr >
@@ -40,12 +40,7 @@
                 <td><?= $student['address'];?></td>
                 <td><?= $student['education'];?></td>
                 <td>
-                    <div class="btn-group">
-
-                        <a href="studentcourses.php" target="_blank" class="btn btn-info btn-sm">view course</a>
-                        <a href="studentpayments.php" target="_blank" class="btn btn-warning mx-1 btn-sm">view payment</a>
-                        <a href="" class="btn btn-danger btn-sm">deactivate this student</a>
-                    </div>
+                    <a href="" target="_blank" class="btn btn-success btn-sm">activate</a>
                 </td>
             </tr>
         <?php }?>

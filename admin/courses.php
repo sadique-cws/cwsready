@@ -9,6 +9,7 @@
 </head>
 <body>
 <?php include "header.php"?>
+<?php include "../include/config.php"?>
 <div class="container mt-5">
     <table class="table table-stripped shadow-sm">
         <tr class="bg-secondary text-light text-capitalize">
@@ -17,6 +18,23 @@
             <th>description</th>
             <th>action</th>
         </tr>
+        <?php
+        $courses=callingRecords('course');
+        foreach($courses as $course){
+            ?>
+            <tr>
+                <td><?= $course['id'];?></td>
+                <td><?= $course['title'];?></td>
+                <td><?= $course['description'];?></td>
+                <td>
+                    <div class="btn-group">
+                        <a href="" class="btn btn-success">activate</a>
+                        <a href="" class="btn btn-info mx-1">Edit</a>
+                        <a href="" class="btn btn-danger">delete</a>
+                    </div>
+                </td>
+            </tr>
+        <?php }?>
     </table>
 </div>
 <?php include "footer.php"?>
