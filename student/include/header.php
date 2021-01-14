@@ -1,6 +1,6 @@
 
  <?php include('../include/config.php'); 
-   
+   check_session($_SESSION['student'],'../login');
 
  ?>
 <!DOCTYPE html>
@@ -12,7 +12,7 @@
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.5.5/css/simple-line-icons.min.css">
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/style.css"> 
 </head>
 <style>
     .list{
@@ -31,18 +31,25 @@
         }
     }
 </style>
+<?php
+$id = $_SESSION['student'];
+$user = callingRecord('students',"contact = $id or email = $id"); 
+?>
 <body style="">
 <div class="header sticky-top" style="background-color: #485461;
 background-image: linear-gradient(315deg, #485461 0%, #28313b 74%);">
     <a class="menu-toggle rounded d-lg-none text-white d-block" href="#">
                 <i class="fa fa-bars fa-2x"></i>
             </a>
-            <nav id="sidebar-wrapper">
+            <nav id="sidebar-wrapper" style="background-image: url('../images/5.svg'); background-size:cover; background-position:bottom;">
                 <ul class="sidebar-nav">
-                    <li class="sidebar-brand">
-                        <a class="js-scroll-trigger text-decoration-none" href="#page-top">Student Portal</a>
+                    <li class="sidebar-brand shadow-sm h-100">
+                        <a class="js-scroll-trigger text-decoration-none" href="#page-top">
+                            <div class="dp bg-danger mx-auto mt-4 rounded-circle" style="width:70px; height:70px;"></div>
+                            <h5 class="text-center text-white mt-2">Name Akon</h5>
+                        </a>
                     </li>
-                    <li class="sidebar-nav-item">
+                    <li class="sidebar-nav-item ">
                         <a class="js-scroll-trigger" href="index.php">Dashboard</a>
                     </li>
                     <li class="sidebar-nav-item">
@@ -59,9 +66,9 @@ background-image: linear-gradient(315deg, #485461 0%, #28313b 74%);">
                     </li>
                 </ul>
             </nav>
-    <nav class="navbar navbar-expand-lg navbar-dark shadow-sm" style="">
+    <nav class="navbar navbar-expand-lg navbar-dark shadow-sm" style="height:62px;">
         <div class="container">
-            <a href="index.php" class="navbar-brand">Code with SadiQ</a>
+            <a href="../index.php" class="navbar-brand">Code with SadiQ</a>
             <ul class="navbar-nav">
                 <li class="nav-item dropdown">
                 <a class="nav-link d-flex text-decoration-none dropdown" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
@@ -77,5 +84,6 @@ background-image: linear-gradient(315deg, #485461 0%, #28313b 74%);">
             </ul>
         </div>
     </nav>
+   
 
 </div>

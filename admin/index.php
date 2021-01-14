@@ -16,7 +16,7 @@
             <div class="card bg-danger text-light">
                 <div class="card-body p-4">
                     <div class="h3 card-title text-capitalize">total students</div>
-                    <p class="lead float-end"><?= countRecord('students','status!=1')?></p>
+                    <p class="lead float-end">153</p>
                 </div>
             </div>
         </div>
@@ -24,7 +24,7 @@
             <div class="card bg-info text-light">
                 <div class="card-body p-4">
                     <div class="h3 card-title text-capitalize">total courses</div>
-                    <p class="lead float-end"><?= countRecord('course')?></p>
+                    <p class="lead float-end">31</p>
                 </div>
             </div>
         </div>
@@ -40,7 +40,7 @@
             <div class="card bg-warning text-light">
                 <div class="card-body p-4">
                     <div class="h3 card-title text-capitalize">New Admission</div>
-                    <p class="lead float-end"><?= countRecord('students', 'status=1')?></p>
+                    <p class="lead float-end">41</p>
                 </div>
             </div>
         </div>

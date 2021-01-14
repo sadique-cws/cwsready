@@ -1,6 +1,7 @@
-<div class="bg-dark p-0 student-sidebar d-none d-lg-block" style="min-height:90vh;height:auto;width:20%;">
+<div class=" p-0 student-sidebar d-none d-lg-block" style="min-height:90vh;height:auto;width:20%; background-image: url('../images/5.svg'); background-size:cover; background-position:bottom;">
                     <div class="profile">
-                        <div class="dp bg-danger mx-auto mt-4 rounded-circle" style="width:70px; height:70px;"></div>
+                        <div class="dp bg-danger mx-auto mt-4 rounded-circle" style="width:70px; height:70px;"><img src="../images/<?= $user['dp']; ?>" alt="" class="img-fluid rounded-circle"></div>
+                        <h5 class="text-center text-white mt-2"><?= $user['name']; ?></h5>
                         <!-- <div class="coll d-flex container">
                             <div class="b1"><i class="fa fa-user text-white"></i></div>
                             <div class="b1"><i class="fa fa-power-off text-white"></i></div>

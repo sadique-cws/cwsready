@@ -16,7 +16,10 @@
                         <th class="py-2">Amount</th>
                         <th class="py-2">Action</th>
                     </tr>
-                    <?php $sr=0;  $calling = callingRecords('course'); foreach($calling as $row): ?>
+                    <?php $sr=0;  
+                    $s_id = $user['id'];
+                    $calling = joinRecord('course','student_course','course.id = student_course.course_id',"student_id = $s_id");
+                    foreach($calling as $row): ?>
                         <tr>
                             <td><?= $sr+=1; ?></td>
                             <td><?= $row['image']; ?></td>
