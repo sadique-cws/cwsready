@@ -1,5 +1,8 @@
- 
- 
+
+ <?php include('../include/config.php'); 
+   
+
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -40,19 +43,19 @@ background-image: linear-gradient(315deg, #485461 0%, #28313b 74%);">
                         <a class="js-scroll-trigger text-decoration-none" href="#page-top">Student Portal</a>
                     </li>
                     <li class="sidebar-nav-item">
-                        <a class="js-scroll-trigger" href="#">Home</a>
+                        <a class="js-scroll-trigger" href="index.php">Dashboard</a>
                     </li>
                     <li class="sidebar-nav-item">
-                        <a class="js-scroll-trigger" href="#">Contact</a>
+                        <a class="js-scroll-trigger" href="mycourse.php">Course</a>
                     </li>
                     <li class="sidebar-nav-item">
-                        <a class="js-scroll-trigger" href="#">service</a>
+                        <a class="js-scroll-trigger" href="payments.php">Payment</a>
                     </li>
                     <li class="sidebar-nav-item">
-                        <a class="js-scroll-trigger" href="#">About</a>
+                        <a class="js-scroll-trigger" href="profile.php">Profile</a>
                     </li>
                     <li class="sidebar-nav-item">
-                        <a class="js-scroll-trigger" href="#"></a>
+                        <a class="js-scroll-trigger" href="logout.php"><i class="fa fa-power-off text-danger"></i> Logout</a>
                     </li>
                 </ul>
             </nav>

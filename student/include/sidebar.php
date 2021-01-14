@@ -8,10 +8,10 @@
                     </div>
                 <div class="list-group mt-5">
                     
-                    <a href="" class="list-group-item rounded-0 list-group-item-action text-light border-0 p-3 list">Dashboard</a>
-                    <a href="" class="list-group-item rounded-0 list-group-item-action text-light border-0 p-3 list">Courses</a>
-                    <a href="" class="list-group-item rounded-0 list-group-item-action text-light border-0 p-3 list">Payments</a>
-                    <a href="" class="list-group-item rounded-0 list-group-item-action text-light border-0 p-3 list">Profile</a>
-                    <a href="" class="list-group-item rounded-0 list-group-item-action text-light border-0 p-3 list"><i class="fa text-danger fa-power-off"></i> Logout</a>
+                    <a href="index.php" class="list-group-item rounded-0 list-group-item-action text-light border-0 p-3 list">Dashboard</a>
+                    <a href="mycourse.php" class="list-group-item rounded-0 list-group-item-action text-light border-0 p-3 list">Courses</a>
+                    <a href="payments.php" class="list-group-item rounded-0 list-group-item-action text-light border-0 p-3 list">Payments</a>
+                    <a href="profile.php" class="list-group-item rounded-0 list-group-item-action text-light border-0 p-3 list">Profile</a>
+                    <a href="logout.php" class="list-group-item rounded-0 list-group-item-action text-light border-0 p-3 list"><i class="fa text-danger fa-power-off"></i> Logout</a>
                 </div>
             </div>
