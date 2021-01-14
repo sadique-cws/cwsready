@@ -2,7 +2,7 @@
 <?php 
 
 $connect = mysqli_connect('localhost','root','','cwsready');
-
+session_start();
 //insertion
 function insertRecords($table, $fields){
     global $connect;
@@ -14,7 +14,7 @@ function insertRecords($table, $fields){
         return ($query)? TRUE : FALSE;
     }
     else{
-        return "Something went wrong"; 
+        return "Something went wrong";
     }
 }
 
@@ -44,7 +44,11 @@ function callingRecord($table,$cond){
 
 function countRecord($table,$cond=null){
     global $connect;
-    $query = mysqli_query($connect,"select * from $table where $cond");
+    if($cond==null){
+        $query = mysqli_query($connect,"select * from $table");
+    }else{
+        $query = mysqli_query($connect,"select * from $table where $cond");
+    }
     $count = mysqli_num_rows($query);
     return $count;
 }
@@ -68,6 +72,11 @@ function alert($msg, $type="primary"){
     echo "<div class='alert alert-$type  alert-dismissible fade show'> $msg 
         <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
     </div>";
+}
+function check_session($session,$page){
+    if(!isset($session)) {
+        redirect($page);
+    }
 }
 
 

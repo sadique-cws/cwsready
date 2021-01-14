@@ -9,7 +9,6 @@
 </head>
 <body>
 <?php include "header.php"?>
-<?php include "../include/config.php"?>
 <div class="container-fluid mt-5">
     <table class="table table-stripped shadow-sm">
         <tr class="bg-secondary text-light text-capitalize">
@@ -44,14 +43,24 @@
 
                         <a href="studentcourses.php" target="_blank" class="btn btn-info btn-sm">view course</a>
                         <a href="studentpayments.php" target="_blank" class="btn btn-warning mx-1 btn-sm">view payment</a>
-                        <a href="" class="btn btn-danger btn-sm">deactivate this student</a>
+                        <form action="students.php" method="post">
+                            <input type="hidden" name="student_id" value="<?= $student['id']; ?>">
+                            <button class="btn btn-danger btn-sm" name="deactivate">deactivate this student</button>
+                        </form>
                     </div>
                 </td>
             </tr>
         <?php }?>
     </table>
 </div>
-<?php include "footer.php"?>
+<?php include "footer.php";
+
+if(isset($_POST['deactivate'])){
+    $id = $_POST['student_id'];
+    updateRecord('students', "status='3'", "id='$id'");
+    redirect('students');
+}
+?>
 
 </body>
 </html>

@@ -9,7 +9,6 @@
 </head>
 <body>
 <?php include "header.php"?>
-<?php include "../include/config.php"?>
 <div class="container-fluid mt-5">
     <table class="table table-stripped shadow-sm">
         <tr class="bg-secondary text-light text-capitalize">
@@ -41,16 +40,32 @@
                 <td><?= $student['education'];?></td>
                 <td>
                     <div class="btn-group">
-
-                        <a href="studentpayments.php" target="_blank" class="btn btn-success btn-sm">Accept</a>
-                        <a href="" class="btn btn-danger btn-sm mx-1">delete this student</a>
+                        <form action="newadmission.php" method="post">
+                            <input type="hidden" name="student_id" value="<?= $student['id']; ?>">
+                            <button class="btn btn-success btn-sm" name="accept">Accept</button>
+                        </form>
+                        <form action="newadmission.php" method="post">
+                            <input type="hidden" name="student_id" value="<?= $student['id']; ?>">
+                            <button class="btn btn-danger btn-sm mx-1" name="delete">delete this student</button>
+                        </form>
                     </div>
                 </td>
             </tr>
         <?php }?>
     </table>
 </div>
-<?php include "footer.php"?>
+<?php include "footer.php";
+if(isset($_POST['accept'])){
+    $id = $_POST['student_id'];
+    updateRecord('students', "status='2'", "id='$id'");
+    redirect('newadmission');
+}?>
+<?php include "footer.php";
+if(isset($_POST['delete'])){
+    $id = $_POST['student_id'];
+    deleteRecord('students', "id='$id'");
+    redirect('newadmission');
+}?>
 
 </body>
 </html>

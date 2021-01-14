@@ -9,7 +9,6 @@
 </head>
 <body>
 <?php include "header.php"?>
-<?php include "../include/config.php"?>
 <div class="container mt-5">
     <div class="row mb-2">
         <div class="col">

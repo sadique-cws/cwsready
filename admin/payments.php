@@ -9,7 +9,6 @@
 </head>
 <body>
 <?php include "header.php"?>
-<?php include "../include/config.php"?>
 <div class="container mt-5">
     <table class="table table-stripped shadow-sm">
         <tr class="bg-secondary text-light text-capitalize">
@@ -32,9 +31,9 @@
                 <td><?= $payment['name'];?></td>
                 <td>
                     <div class="btn-group">
-                        <a href="" class="btn btn-success">activate</a>
-                        <a href="" class="btn btn-info mx-1">Edit</a>
-                        <a href="" class="btn btn-danger">delete</a>
+                        <a href="" class="btn btn-success btn-sm">activate</a>
+                        <a href="" class="btn btn-info mx-1 btn-sm">Edit</a>
+                        <a href="" class="btn btn-danger btn-sm">delete</a>
                     </div>
                 </td>
             </tr>

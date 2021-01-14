@@ -13,6 +13,7 @@
         <div class="card shadow-sm">
             <div class="card-body m-5">
                 <h5 class="text-center text-muted">CWS | Admin panel</h5>
+
                 <form action="adminlogin.php" method="post">
                     <div class="mb-3">
                         <label for="" class="col-form-label">Username</label>
@@ -34,12 +35,12 @@
 include '../include/config.php';
 if(isset($_POST['login'])){
     $username = $_POST['username'];
-    echo ('hello');
     $password = $_POST['password'];
-    if(countRecords('admin', "username='$username', password='$password")>0){
-        echo ("user found");
+    if(countRecord('admin', "username='$username' and password='$password'")){
+        $_SESSION['admin']=$username;
+        redirect('index');
     }else{
-        echo ("user not found");
+        alert('wrong username or password', 'danger');
     }
 }
 ?>
