@@ -1,3 +1,6 @@
+<?php
+include '../include/config.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,8 +34,14 @@
         </div>
     </div>
 </div>
+</body>
+</html>
+
 <?php
-include '../include/config.php';
+
+if(check_session($_SESSION['admin'])){
+    redirect('index');
+}
 if(isset($_POST['login'])){
     $username = $_POST['username'];
     $password = $_POST['password'];
@@ -44,6 +53,3 @@ if(isset($_POST['login'])){
     }
 }
 ?>
-</body>
-</html>
-

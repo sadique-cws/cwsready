@@ -13,36 +13,36 @@
 <div class="container mt-5">
     <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4">
         <div class="col">
-            <div class="card bg-danger text-light">
+            <a href="students.php" class="nav-link card bg-danger text-light">
                 <div class="card-body p-4">
                     <div class="h3 card-title text-capitalize">total students</div>
-                    <p class="lead float-end">153</p>
+                    <p class="lead float-end"><?= countRecord('students')?></p>
                 </div>
-            </div>
+            </a>
         </div>
         <div class="col">
-            <div class="card bg-info text-light">
+            <a href="courses.php" class="nav-link card bg-info text-light">
                 <div class="card-body p-4">
                     <div class="h3 card-title text-capitalize">total courses</div>
-                    <p class="lead float-end">31</p>
+                    <p class="lead float-end"><?= countRecord('course')?></p>
                 </div>
-            </div>
+            </a>
         </div>
         <div class="col">
-            <div class="card bg-success text-light">
+            <a href="payments.php" class="nav-link card bg-success text-light">
                 <div class="card-body p-4">
                     <div class="h3 card-title text-capitalize">Payments</div>
                     <p class="lead float-end">Total due: 31,740/-</p>
                 </div>
-            </div>
+            </a>
         </div>
         <div class="col">
-            <div class="card bg-warning text-light">
+            <a href="newadmission.php" class="nav-link card bg-warning text-light">
                 <div class="card-body p-4">
                     <div class="h3 card-title text-capitalize">New Admission</div>
-                    <p class="lead float-end">41</p>
+                    <p class="lead float-end"><?= countRecord('students', 'status=1')?></p>
                 </div>
-            </div>
+            </a>
         </div>
     </div>
 </div>

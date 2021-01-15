@@ -1,5 +1,7 @@
 <?php include '../include/config.php';
-check_session($_SESSION['admin'], 'adminlogin');
+if(!check_session($_SESSION['admin'])){
+    redirect('adminlogin');
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">

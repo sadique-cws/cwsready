@@ -26,7 +26,7 @@
 
         <?php
         $students=callingRecords('students', "status='2'");
-        if(!empty($student)):
+        if(!empty($students)):
 
         foreach($students as $student){
             ?>

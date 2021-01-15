@@ -1,5 +1,5 @@
- 
-<?php 
+
+<?php
 
 $connect = mysqli_connect('localhost','root','','cwsready');
 session_start();
@@ -10,7 +10,7 @@ function insertRecords($table, $fields){
     if(!empty($fields)){
         $col = implode(",", array_keys($fields));
         $rows = implode("','",array_values($fields));
-        $query = mysqli_query($connect,"insert into $table ($col) values ('$rows')");     
+        $query = mysqli_query($connect,"insert into $table ($col) values ('$rows')");
         return ($query)? TRUE : FALSE;
     }
     else{
@@ -60,7 +60,7 @@ function updateRecord($table,$fields, $cond=null){
     global $connect;
     $query = mysqli_query($connect,"update $table SET $fields where $cond");
 }
-//deleting data 
+//deleting data
 function deleteRecord($table, $cond){
     global $connect;
     $query = mysqli_query($connect,"DELETE from $table where $cond");
@@ -77,9 +77,12 @@ function alert($msg, $type="primary"){
         <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
     </div>";
 }
-function check_session($session,$page){
+function check_session($session){
     if(!isset($session)) {
-        redirect($page);
+        return false;
+    }
+    else{
+        return true;
     }
 }
 
@@ -94,6 +97,3 @@ function joinRecord($table, $table2, $cond, $cond1){
 
 }
 
-
-
-?>
