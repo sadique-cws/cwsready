@@ -83,3 +83,17 @@ function check_session($session,$page){
     }
 }
 
+function joinRecord($table, $table2, $cond, $cond1){
+    // select * from table Join table2 ON table.id = table2.id where id = d ;
+    global $connect;
+    $query = mysqli_query($connect,"select * from $table join $table2 on $cond where $cond1");
+    while($row = mysqli_fetch_array($query)){
+        $array[] = $row;
+    }
+    return (!empty($array))? $array: "Error in Fetching Data";
+
+}
+
+
+
+?>

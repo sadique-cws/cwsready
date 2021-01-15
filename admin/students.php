@@ -25,7 +25,9 @@
         </tr>
 
         <?php
-        $students=callingRecords('students', 'status=2');
+        $students=callingRecords('students', "status='2'");
+        if(!empty($student)):
+
         foreach($students as $student){
             ?>
             <tr >
@@ -50,7 +52,11 @@
                     </div>
                 </td>
             </tr>
-        <?php }?>
+        <?php } else:?>
+            <tr>
+                <th colspan="10">No records Found</th>
+            </tr>
+            <?php endif; ?>
     </table>
 </div>
 <?php include "footer.php";
