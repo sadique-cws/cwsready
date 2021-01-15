@@ -22,7 +22,7 @@ $error_message = "";
 			}
     } 
     else {
-		$error_message = "Email not exists!";
+		$error_message = "Phone not exists!";
 	}
 }
 if(!empty($_POST["otp_submit"])) {
