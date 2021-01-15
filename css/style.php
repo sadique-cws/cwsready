@@ -133,9 +133,12 @@
 
  
   .post-item{
-    transition: .3s all linear;
+    transition: .5s all linear;
   }
   .post-item:hover{
+    transition: .5s all linear;
+    top:-5px;
+    border-radius:10px;
     box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
   }
   .list:hover{

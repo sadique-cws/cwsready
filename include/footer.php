@@ -1,7 +1,66 @@
-    <footer style="background-color: #485461;
-    background-image: linear-gradient(315deg, #485461 0%, #28313b 74%); position:relative; bottom:0;" class="p-3">
-        <div class="container">
-            <h6 class="text-white">Developed By <a href="">Vikas</a> & <a href="">Alok</a> (student of CWS)</h6>
+    <style>
+    .facebook, .twitter, .linkedin, .github{
+        transition:.3s all linear;
+        color:#6c757d;
+    }
+    .facebook:hover{
+        color:#4267B2;
+    }
+    .linkedin:hover{
+        color:#0e76a8;
+    }
+    .twitter:hover{
+        color:#1DA1F2;
+    }
+    .github:hover{
+        color:#fafafa;
+    }
+    </style>
+    <footer style="background-color: #26272b; position:relative; bottom:0;" class="p-3 mt-5">
+        <div class="container py-5">
+            <div class="row row-cols-lg-2 row-cols-md-2 rows-cols-sm-2 row-cols-1">
+                <div class="col mb-4">
+                    <div class="ad-pro d-flex">
+                        <div class="img"><img src="images/sadiq.jfif" style="height:100px; width:100px;border-radius:20px;" class="img-fluid" alt=""></div>
+                        <span class=" ms-2 text-light"><h5>Sadique Hussain</h5><p class="small h6 text-muted">Tutor</p></span>
+                    </div>
+                    <div class="phone d-flex mt-4">
+                        <span class="icon text-muted pt-1"><i class="fa fa-phone"></i></span>
+                        <span class=" ms-2 text-light text-muted">+91 978678686</span>
+                    </div>
+                    <div class="email d-flex mt-3">
+                        <span class="icon text-muted pt-1"><i class="fa fa-envelope"></i></span>
+                        <span class=" ms-2 text-light text-muted">sadique@gmail.com</span>
+                    </div>
+                    <div class="email d-flex mt-3">
+                        <span class="icon text-muted pt-1"><i class="fa fa-map-marker"></i></span>
+                        <span class=" ms-2 text-light text-muted"> K. Haat Thana Chowk, Purnia <br> Bihar 854301</span>
+                    </div>
+                </div>
+                <div class="col ">
+                <h5 class="text-white">Connect With Us</h5>
+                    <a class="facebook d-flex mt-3 text-decoration-none" href="" >
+                        <span class="icon pt-1"><i class="fa fa-facebook-square fa-2x"></i></span>
+                        <span class=" ms-2 mt-2">facebook</span>
+                    </a>
+                    <a class="linkedin d-flex mt-3 text-decoration-none" href="" >
+                        <span class="icon pt-1"><i class="fa fa-linkedin-square fa-2x"></i></span>
+                        <span class=" ms-2 mt-2">Linkedin</span>
+                    </a>
+                    <a class="github d-flex mt-3 text-decoration-none" href="" >
+                        <span class="icon pt-1"><i class="fa fa-github-square fa-2x"></i></span>
+                        <span class=" ms-2 mt-2">Git Hub</span>
+                    </a>
+                    <a class="twitter d-flex mt-3 text-decoration-none" href="" >
+                        <span class="icon pt-1"><i class="fa fa-twitter-square fa-2x"></i></span>
+                        <span class=" ms-2 mt-2">Twitter</span>
+                    </a>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="container border-top border-secondary py-3 pb-0 justify-content-middle">
+            <h6 class="text-muted fw-light">Developed By <a href="" class="text-light text-decoration-none">Vikas</a> & <a href="" class="text-light text-decoration-none">Alok</a> (student of CWS)</h6>
         </div>
     </footer>
     <!-- JavaScript Bundle with Popper -->

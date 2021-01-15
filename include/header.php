@@ -19,6 +19,10 @@
         if($uri_segments[2] != 'login.php'){
             echo "background-color: #00838f;";
         }
+        if(isset($_SESSION['student'])){
+            $id = $_SESSION['student'];
+            $student = callingRecord('students',"contact = $id or email = $id"); 
+        }
     ?>
     
 }
@@ -56,7 +60,7 @@
                         <a class="js-scroll-trigger" href="#">About</a>
                     </li>
                     <li class="sidebar-nav-item">
-                        <a class="js-scroll-trigger" href="#"></a>
+                        <a class="js-scroll-trigger" href="student/logout.php">:ogout</a>
                     </li>
                 </ul>
             </nav>
@@ -64,9 +68,28 @@
         <div class="container">
             <a href="index.php" class="navbar-brand">Code With SadiQ</a>
             <ul class="navbar-nav">
-                <li class="navbar-nav"><a href="" class="nav-link text-white">Home</a></li>
+            <?php if(isset($_SESSION['student'])): ?>
+                <!-- <div class="d-flex">
+                    <div class="bg-dark rounded-circle " style="height:45px; width:45px;"><img src="images/2002.jpeg" alt="" class="img-fluid w-100 rounded-circle border-0"></div>
+                    <span class="mt-2 ms-2 text-white"><h6 class="h5 fw-light">name</h6></span>
+                </div>     -->
+                <li class=" dropdown">
+                    <a class="nav-link d-flex dropdown" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                        <div class="bg-dark rounded-circle " style="height:45px; width:45px;"><img src="images/<?= $student['dp']; ?>" alt="" class="img-fluid w-100 rounded-circle border-0"></div>
+                        <span class="mt-2 ms-2 text-white"><h6 class="h5 fw-light"><?= $student['name']; ?></h6></span>
+                    </a>
+
+                    <ul class="dropdown-menu rounded-0" aria-labelledby="dropdownMenuLink">
+                        <li><a class="dropdown-item" href="student/index.php">Dashboard</a></li>
+                        <li><a class="dropdown-item" href="student/profile.php">Profile</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="student/logout.php"><i class="fa fa-power-off"></i>  Logout</a></li>
+                    </ul>
+                </li>
+            <?php else: ?>
                 <li class="navbar-nav"><a href="login.php" class="nav-link text-white">Login</a></li>
                 <li class="navbar-nav"><a href="apply.php" class="nav-link text-white btn-danger " style="border-radius:25px;">Apply Addmission</a></li>
+                <?php endif; ?>
             </ul>
         </div>
     </nav>
