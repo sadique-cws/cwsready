@@ -16,7 +16,7 @@
                             <input type="password" name="password" class="form-control bg-transparent text-white shadow-none rounded-0">
                             
                         </div>
-                        <span><a href="" class="text-decoration-none text-white mb-3 float-end">forgot password..?</a></span>
+                        <span><a href="forget_password.php" class="text-decoration-none text-white mb-3 float-end">forgot password..?</a></span>
                         <div class="mb-3">
                             <input type="submit" name="login" value="Login" class="btn btn-info  w-100">
                         </div>  
