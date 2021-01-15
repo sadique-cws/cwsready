@@ -64,6 +64,7 @@
 if(isset($_POST['deactivate'])){
     $id = $_POST['student_id'];
     updateRecord('students', "status='3'", "id='$id'");
+    updateRecord('student_course', "status='0'", "student_id='$id'");
     redirect('students');
 }
 ?>
