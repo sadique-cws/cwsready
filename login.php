@@ -16,7 +16,7 @@
                             <input type="password" name="password" class="form-control shadow-none rounded-0">
                         </div>
                         <div class="mb-3">
-                            <input type="submit" name="login" value="Login" class="btn btn-info  w-100">
+                            <input type="submit"   name="login" value="Login" class="btn btn-info  w-100">
                         </div>  
                         </form>
                     </div>

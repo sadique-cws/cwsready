@@ -19,15 +19,19 @@ function insertRecords($table, $fields){
 }
 
 //calling more then one data
-function callingRecords($table, $cond = null){
+function callingRecords($table, $cond = null, $select=null){
     global $connect;
     $array = [];
 
+    if($select==null){
+        $select = '*';
+    }
+
     if($cond!=null){
-        $query = mysqli_query($connect,"select * from $table where $cond");
+        $query = mysqli_query($connect,"select $select from $table where $cond");
     }
     else{
-        $query = mysqli_query($connect,"select * from $table");
+        $query = mysqli_query($connect,"select $select from $table");
     }
     while($row = mysqli_fetch_array($query)){
         $array[] = $row;
@@ -79,7 +83,3 @@ function check_session($session,$page){
     }
 }
 
-
-
-
-?>
