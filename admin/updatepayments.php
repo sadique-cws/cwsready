@@ -38,8 +38,7 @@ if(!empty($student_courses)):
                 if(countRecord('payments', "student_id='$student_id' and sc_id='$sc_id' and date_of_creation='$new_date'")==0){
                     $data = [
                         'student_id'=>$student_id,
-                        'date_of_creation'=>$new_date,
-                        'date_of_payment'=>$new_date,
+                        'due_months'=>$new_date,
                         'sc_id'=>$sc_id,
                         'amount'=>'700',
                         'status'=>'0'

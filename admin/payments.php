@@ -25,7 +25,7 @@
         <?php
         $payments=callingRecords('payments JOIN students ON payments.student_id=students.id JOIN student_course
          ON payments.sc_id=student_course.id JOIN course ON student_course.course_id=course.id', '',
-    'payments.id, students.name, course.title, payments.amount, payments.month, payments.year, payments.status');
+    'payments.id, students.name, course.title, payments.amount, payments.due_months, payments.status');
         foreach($payments as $payment){
             ?>
             <tr>
@@ -33,7 +33,7 @@
                 <td><?= $payment['name'];?></td>
                 <td><?= $payment['title'];?></td>
                 <td><?= $payment['amount'];?></td>
-                <td><?= $payment['month'];?></td>
+                <td><?= $payment['due_months'];?></td>
                 <td><?= $payment['year'];?></td>
                 <td>
                     <?php if($payment['status'] == 1){ ?>
