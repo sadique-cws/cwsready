@@ -66,7 +66,7 @@
         else:
             $payments=callingRecords("payments JOIN students ON (payments.student_id=students.id and payments.status='$pay_status' and students.id='$id') JOIN student_course
          ON payments.sc_id=student_course.id JOIN course ON student_course.course_id=course.id", "",
-                'payments.id, students.name, course.title, payments.amount, payments.due_months, payments.date_of_payment, payments.status, payments.pay_request as pr');
+                'payments.id, payments.pay_request as ps, students.name, course.title, payments.amount, payments.due_months, payments.date_of_payment, payments.status');
         endif;
         foreach($payments as $payment){
             ?>
@@ -90,6 +90,7 @@
                         <div class="badge rounded-pill px-3 text-dark bg-info">paid</div>
                     <?php }
                     else{ ?>
+                    <?= $payment['ps']; ?>
                         <div class="badge rounded-pill px-3 bg-warning text-dark">pending</div>
                     <?php } ?>
                 </td>

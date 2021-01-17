@@ -132,9 +132,10 @@ if(isset($_GET['course_id'])){
             <div class="profile_desc_section">
                 <h2><?= $record['title']; ?></h2>
                 <h3 class="h5 text-dark"></h3>
-                <p class="description"><?= $record['description']; ?><p>
                 <h6 class="text-success">Rs. 700 /- month</h6>
-                <h3 class="mt-3">Select</h3>
+                <p class="description mt-3"><?= $record['description']; ?><p>
+                
+                <h3 class="mt-2">Select</h3>
                 <?php $active_status = $student['status']; if($active_status == '2'): ?>
                 <?php if($course_count == 0): ?>
                 <form action="course.php?course_name=<?= $_GET['course_name']; ?>&course_id=<?= $_GET['course_id']; ?>" method="post">

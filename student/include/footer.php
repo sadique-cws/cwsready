@@ -39,7 +39,7 @@
                 </div>
                 <div class="col ">
                 <h5 class="text-white">Connect With Us</h5>
-                    <a class="facebook d-flex mt-3 text-decoration-none" href="" >
+                    <a class="facebook d-flex mt-3 text-decoration-none" href="https://www.facebook.com/cwspurnea/" >
                         <span class=" pt-1"><i class="fa fa-facebook-square fa-2x"></i></span>
                         <span class=" ms-2 mt-2">facebook</span>
                     </a>
