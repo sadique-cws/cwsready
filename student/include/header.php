@@ -64,6 +64,9 @@ $user = callingRecord('students',"contact = '$id' or email = '$id'");
                         <a class="js-scroll-trigger" href="profile.php">Profile</a>
                     </li>
                     <li class="sidebar-nav-item">
+                        <a class="js-scroll-trigger" href="setting.php">Setting</a>
+                    </li>
+                    <li class="sidebar-nav-item">
                         <a class="js-scroll-trigger" href="logout.php"><i class="fa fa-power-off text-danger"></i> Logout</a>
                     </li>
                 </ul>

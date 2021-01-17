@@ -13,6 +13,7 @@
                     <a href="mycourse.php" class="list-group-item rounded-0 list-group-item-action text-light border-0 p-3 list">Courses</a>
                     <a href="payments.php" class="list-group-item rounded-0 list-group-item-action text-light border-0 p-3 list">Payments</a>
                     <a href="profile.php" class="list-group-item rounded-0 list-group-item-action text-light border-0 p-3 list">Profile</a>
+                    <a href="setting.php" class="list-group-item rounded-0 list-group-item-action text-light border-0 p-3 list">Setting</a>
                     <a href="logout.php" class="list-group-item rounded-0 list-group-item-action text-light border-0 p-3 list"><i class="fa text-danger fa-power-off"></i> Logout</a>
                 </div>
             </div>

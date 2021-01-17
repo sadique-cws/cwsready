@@ -195,6 +195,7 @@ if(isset($_POST['add_course'])){
     $data = [
         'student_id' => $student['id'],
         'course_id' => $_POST['course_id'],
+        'status' => '0',
     ];
     
 

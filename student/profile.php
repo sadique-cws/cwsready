@@ -198,13 +198,12 @@ li p {
 
                     <div class="profile_desc_section">
                         <h2><?= $user['name']; ?></h2>
-                        <h3 class="h5 text-dark">+91 <?= $user['contact']; ?> </h3>
-                        <h3 class="h5 text-dark"><?= $user['email']; ?></h3>
-                        <h3 class="h5 mt-n3 text-dark">Father - <?= $user['father_name']; ?></h3>
+                        <h3 class="h5 text-muted">(+91) <?= $user['contact']; ?> </h3>
+                        <h3 class="h5 text-muted"><?= $user['email']; ?></h3>
+                        <h3 class="h5 mt-n3 text-muted">Father - <?= $user['father_name']; ?></h3>
                         <h6>D.O.B : <?= $user['dob']; ?></h6>
-                        <p class="lead"><?= $user['address']; ?></p>
-                        <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto explicabo assumenda ipsa illum asperiores, nemo suscipit numquam iusto nobis nam labore voluptatibus ea autem ab praesentium atque. Excepturi, quibusdam animi!<p>
-                        <h3>Selected Course</h3>
+                        <p class="h5 text-muted"><?= $user['address']; ?></p>
+                        <h3 class="mt-4">Selected Course</h3>
                         <div class="interests">
 						<?php  
 							$s_id = $user['id'];
@@ -214,8 +213,9 @@ li p {
                             <span class="interests_item"><?= $row['title']; ?></span>
 						<?php endforeach; endif;?>
                         </div>
+						<a href="" class="btn btn-info btn-sm mt-5">edit</a>
                     </div>
-
+						
                 </section>
             </div>
 

@@ -14,7 +14,7 @@ $error_message = "";
 		// generate OTP
 		 $otp = rand(100000,999999);
 		// Send OTP
-		//$mail_status = send($_POST["phone"],"your Secure OTP is : ". $otp);
+		$mail_status = send($_POST["phone"],"your Secure OTP is : ". $otp);
 		$_SESSION['otp'] = $otp;
 			$result = mysqli_query($connect,"INSERT INTO otp_expiry(otp,is_expired,create_at) VALUES ('" . $otp . "', 0, '" . date("Y-m-d H:i:s"). "')");
 			$current_id = mysqli_insert_id($connect);
