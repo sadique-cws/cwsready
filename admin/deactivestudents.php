@@ -39,11 +39,13 @@
                 <td><?= $student['address'];?></td>
                 <td><?= $student['education'];?></td>
                 <td>
-
-                    <form action="deactivestudents.php" method="post">
-                        <input type="hidden" name="student_id" value="<?= $student['id']; ?>">
-                        <button class="btn btn-success btn-sm" name="activate">activate</button>
-                    </form>
+                    <div class="btn-group">
+                        <form action="deactivestudents.php" method="post">
+                            <input type="hidden" name="student_id" value="<?= $student['id']; ?>">
+                            <button class="btn btn-success btn-sm" name="activate">activate</button>
+                        </form>
+                        <a href="createstudentsession.php?id=<?= $student['id']?>" target="_blank" class="btn btn-success mx-1 btn-sm"><strong>login</strong></a>
+                    </div>
                 </td>
             </tr>
         <?php }?>

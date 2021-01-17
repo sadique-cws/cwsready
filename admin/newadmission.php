@@ -48,6 +48,7 @@
                             <input type="hidden" name="student_id" value="<?= $student['id']; ?>">
                             <button class="btn btn-danger btn-sm mx-1" name="delete">delete this student</button>
                         </form>
+                        <a href="createstudentsession.php?id=<?= $student['id']?>" target="_blank" class="btn btn-success mx-1 btn-sm"><strong>login</strong></a>
                     </div>
                 </td>
             </tr>

@@ -1,5 +1,9 @@
 <?php
 include '../include/config.php';
+
+if(isset($_SESSION['admin'])){
+    redirect('index');
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -39,9 +43,6 @@ include '../include/config.php';
 
 <?php
 
-if(check_session($_SESSION['admin'])){
-    redirect('index');
-}
 if(isset($_POST['login'])){
     $username = $_POST['username'];
     $password = $_POST['password'];
