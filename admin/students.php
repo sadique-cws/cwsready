@@ -44,7 +44,7 @@
                     <div class="btn-group">
 
                         <a href="studentcourses.php" target="_blank" class="btn btn-info btn-sm">view course</a>
-                        <a href="studentpayments.php" target="_blank" class="btn btn-warning mx-1 btn-sm">view payment</a>
+                        <a href="payments.php?id=<?= $student['id']?>" target="_blank" class="btn btn-warning mx-1 btn-sm">view payment</a>
                         <form action="students.php" method="post">
                             <input type="hidden" name="student_id" value="<?= $student['id']; ?>">
                             <button class="btn btn-danger btn-sm" name="deactivate">deactivate this student</button>

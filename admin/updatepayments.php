@@ -1,5 +1,5 @@
 <?php
-include('../include/config.php');
+include('header.php');
 
 $now = new DateTime();
 
@@ -32,10 +32,9 @@ if(!empty($student_courses)):
             for($month=$start_month;$month<=$end_month;$month++){
                 $result = new DateTime($year.'-'.$month.'-1');
                 $new_date = $result->format("Y-m-d");
-                echo $new_date."<br>";
                 $student_id = $sc['student_id'];
                 $sc_id = $sc['id'];
-                if(countRecord('payments', "student_id='$student_id' and sc_id='$sc_id' and date_of_creation='$new_date'")==0){
+                if(countRecord('payments', "student_id='$student_id' and sc_id='$sc_id' and due_months='$new_date'")==0){
                     $data = [
                         'student_id'=>$student_id,
                         'due_months'=>$new_date,
@@ -50,3 +49,4 @@ if(!empty($student_courses)):
 
     }
 endif;
+redirect('payments');

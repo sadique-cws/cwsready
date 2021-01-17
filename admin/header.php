@@ -22,20 +22,27 @@ if(!check_session($_SESSION['admin'])){
         <div class="container">
             <ul class="navbar-nav me-auto">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="index.php">Dashboard</a>
+                    <a class="nav-link" aria-current="page" href="index.php">Dashboard</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="students.php">Students</a>
+                    <a class="nav-link" aria-current="page" href="students.php">Students</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="newadmission.php">New admission</a>
+                    <a class="nav-link" aria-current="page" href="newadmission.php">New admission</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="courses.php">Courses</a>
+                    <a class="nav-link" aria-current="page" href="courses.php">Courses</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="payments.php">Payments</a>
+                    <a class="nav-link" aria-current="page" href="payments.php">Payments</a>
                 </li>
+                <?php $count =  countRecord("payments JOIN students ON (payments.student_id=students.id and payments.status='0' and payments.pay_request='1') JOIN student_course
+         ON payments.sc_id=student_course.id JOIN course ON student_course.course_id=course.id");
+                if($count>0):?>
+                <li class="nav-item">
+                    <a class="nav-link text-danger" aria-current="page" href="paidrequest.php">Paid Request (<?= $count?>)</a>
+                </li>
+                <?php endif;?>
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="deactivestudents.php">Deactivated students</a>
                 </li>
