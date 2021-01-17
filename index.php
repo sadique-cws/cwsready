@@ -12,12 +12,12 @@ background-image: linear-gradient(315deg, #485461 0%, #28313b 74%);"">
             <div class="d-inline-flex py-2 px-4 text-white bd-highlight" style=" background-color:  #485461;">Our Courses</div>
             <a href="" class="text-muted text-decoration-none float-end">view all</a>
         </div>
-        <div class="row row-cols-lg-4 row-cols-1 row-cols-sm-2 g-3 row-cols-md-3">
+        <div class="row row-cols-lg-4 row-cols-1 row-cols-sm-2 g-3 row-cols-md-3 mb-5">
            <?php $courses = callingRecords('course'); foreach($courses as $course): ?>
             <div class="col mb-3">
                 <a href="course.php?course_name=<?= $course['title']; ?>&course_id=<?= $course['id']; ?>" class="text-decoration-none text-dark">
                     <div class="card border-0 shadow-sm post-item">
-                        <img src="images/php.jpg" class="card-img-top img-fluid img-responsive" style="object-fit:cover; height:233px;" alt="">
+                        <img src="images/<?= $course['image']; ?>" class="card-img-top img-fluid img-responsive" style="object-fit:cover; height:233px;" alt="">
                         <div class="card-body">
                             <h4><?= $course['title']; ?></h4>
                             <p class="small"><i class="fa text-dark fa-clock-o"></i> about 2 months</p>

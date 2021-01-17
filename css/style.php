@@ -104,7 +104,7 @@
     margin-top: 170px;
   }
   @media (max-width: 992px) {
-        .navbar-nav{
+        .navbar-nav, .hero{
             display: none;
         }
         

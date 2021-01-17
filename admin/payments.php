@@ -14,11 +14,11 @@
         <div class="card-body py-1">
             <?php
             $id = '';
-            if($_GET['id']){
+            if(isset($_GET['id'])){
                 $id = $_GET['id'];
             }
 
-            if($_GET['filter']=='paid_records'){
+            if(isset($_GET['filter']) =='paid_records'){
                 $pay_status=1;
 
                 ?>
@@ -51,7 +51,7 @@
             <th>course</th>
             <th>fee</th>
             <th>month</th>
-            <?php if($_GET['filter']):?>
+            <?php if(isset($_GET['filter'])):?>
             <th>Date of payment</th>
             <?php endif;?>
             <th>status</th>
@@ -77,7 +77,7 @@
                 <td><?= $payment['amount'];?></td>
                 <td><?php $date = new DateTime($payment['due_months']);echo $date->format('m/Y')?></td>
 
-                <?php if($_GET['filter']):?>
+                <?php if(isset($_GET['filter'])):?>
                     <td>
                         <?php
                         $get_pay_date = $payment['date_of_payment'];

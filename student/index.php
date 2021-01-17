@@ -26,6 +26,7 @@
                                 <div class="card-body d-flex">
                                     <div class="d h5 mt-3">Course</div>
                                     <div class="icon ms-auto p-3 rounded-circle " style="heihgt:65px; width:65px;"><i class="fa fa-file fa-2x ms-1"></i></div>
+                                    <a href="mycourse.php" class="stretched-link"></a>
                                 </div>
                             </div>
                         </div>
@@ -35,6 +36,7 @@
                                     <div class="card-body d-flex">
                                         <div class="d h5 mt-3">Payment</div>
                                         <div class="icon ms-auto p-3 rounded-circle" style="heihgt:65px; width:65px;"><i class="fa fa-dollar fa-2x ms-2"></i></div>
+                                        <a href="payments.php" class="stretched-link"></a>
                                     </div>
                                 </div>
                             </div>
@@ -45,6 +47,7 @@
                                     <div class="card-body d-flex">
                                         <div class="d h5 mt-3">Profile</div>
                                         <div class="icon ms-auto p-3 rounded-circle" style="heihgt:65px; width:65px;"><i class="fa fa-user fa-2x ms-1"></i></div>
+                                        <a href="profile.php" class="stretched-link"></a>
                                     </div>
                                 </div>
                             </div>

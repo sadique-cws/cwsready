@@ -16,7 +16,7 @@
         color:#fafafa;
     }
     </style>
-    <footer style="background-color: #26272b; position:relative; bottom:0;" class="p-3 mt-5">
+    <footer style="background-color: #26272b; position:relative; bottom:0; background:url('images/footer.png'); background-size:cover; background-position:50% 50%;" class="p-3 bg-dark">
         <div class="container py-5">
             <div class="row row-cols-lg-2 row-cols-md-2 rows-cols-sm-2 row-cols-1">
                 <div class="col mb-4">
@@ -47,7 +47,7 @@
                         <span class="icon pt-1"><i class="fa fa-linkedin-square fa-2x"></i></span>
                         <span class=" ms-2 mt-2">Linkedin</span>
                     </a>
-                    <a class="github d-flex mt-3 text-decoration-none" href="" >
+                    <a class="github d-flex mt-3 text-decoration-none" href="https://github.com/sadique-cws" >
                         <span class="icon pt-1"><i class="fa fa-github-square fa-2x"></i></span>
                         <span class=" ms-2 mt-2">Git Hub</span>
                     </a>
@@ -60,7 +60,7 @@
             </div>
         </div>
         <div class="container border-top border-secondary py-3 pb-0 justify-content-middle">
-            <h6 class="text-muted fw-light">Developed By <a href="" class="text-light text-decoration-none">Vikas</a> & <a href="" class="text-light text-decoration-none">Alok</a> (student of CWS)</h6>
+            <h6 class="text-muted fw-light">Developed By <a href="https://github.com/vikas-vm" class="text-light text-decoration-none">Vikas</a> & <a href="https://github.com/alok9038" class="text-light text-decoration-none">Alok</a> (student of CWS)</h6>
         </div>
     </footer>
     <!-- JavaScript Bundle with Popper -->

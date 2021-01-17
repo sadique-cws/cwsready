@@ -17,11 +17,11 @@
         $uri_path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
         $uri_segments = explode('/', $uri_path);
         if($uri_segments[2] != 'login.php'){
-            echo "background-color: #00838f;";
+            echo "background-color: #048591;";
         }
         if(isset($_SESSION['student'])){
             $id = $_SESSION['student'];
-            $student = callingRecord('students',"contact = $id or email = $id"); 
+            $student = callingRecord('students',"contact = '$id' or email = '$id'"); 
         }
     ?>
     
@@ -29,7 +29,7 @@
 
 #header.active {
      box-shadow: 0 0 10px rgba(0,0,0,0.4); 
-     background-color: #00838f; 
+     background-color: #048591; 
      /* background-image: url('images/bbg.jpg'); */
      /* background-image: linear-gradient(315deg, #485461 0%, #28313b 74%); */
     
@@ -102,12 +102,20 @@
     ?>
     <div class="container-fluid p-5" style="">
         <div class="container py-5">
-            <div class="col-lg-8">
-            <h1 class="display-4 text-white">Welcome To Code with SadiQ</h1>
-            <p class="lead text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus perspiciatis tenetur cupiditate odit iusto doloribus doloremque? Dolorum, dolor! Laudantium nemo, nobis possimus esse assumenda ab labore libero? Fuga, incidunt aspernatur.</p>
-        
-            </div>     
+            <div class="row">
+                <div class="col-lg-7 col">
+                <h1 class="display-4 text-white">Welcome To Code with SadiQ</h1>
+                <p class="lead text-white">CWS is an on-demand marketplace for top Web programming engineers, developers, consultants, architects, programmers, and tutors. Get your projects built by vetted web programming freelancers or learn from expert mentors with team training & coaching experiences in <strong>Project based training.</strong></p>
+                <div class="quote shadow-sm p-3" style="border-left:3px solid white;">
+                    <p class="lead text-white h6"><strong>We Believe:</strong> Knowledge is not skill. Knowledge plus ten thousand times is skill.</p>
+                </div>
+                </div> 
+                <div class="col hero">
+                    <img src="images/hero.png" class="img-fluid" alt="" srcset="">
+                </div>
+            </div>   
         </div>
+
     </div>
     <?php } ?>
 </div>

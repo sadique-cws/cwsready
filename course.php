@@ -3,8 +3,9 @@
 
 if(isset($_GET['course_id'])){
     $id= $_GET['course_id'];
+    $s_id = $student['id'];
     $record = callingRecord('course',"id = '$id'");
-
+    $course_count = countRecord('student_course',"student_id = '$s_id' and course_id = '$id'");
 }
 ?>
 <style>
@@ -132,11 +133,49 @@ if(isset($_GET['course_id'])){
                 <h2><?= $record['title']; ?></h2>
                 <h3 class="h5 text-dark"></h3>
                 <p class="description"><?= $record['description']; ?><p>
-                <h3>Select</h3>
-                <a href="" class="btn btn-secondary">Select</a>
+                <h6 class="text-success">Rs. 700 /- month</h6>
+                <h3 class="mt-3">Select</h3>
+                <?php $active_status = $student['status']; if($active_status == '2'): ?>
+                <?php if($course_count == 0): ?>
+                <form action="course.php?course_name=<?= $_GET['course_name']; ?>&course_id=<?= $_GET['course_id']; ?>" method="post">
+                    <input type="text" name="course_id" value="<?php echo $_GET['course_id']; ?>" hidden>
+                    <input type="submit" value="Add course" name="add_course" class="btn btn-info btn">
+                </form> 
+                <?php else: ?>
+                    <span class="alert alert-secondary px-4 py-2"><strong>You Are Already Assigned For This Course</strong></span>
+                <?php endif; elseif($active_status == '1'): ?>
+                    <span class="alert alert-warning px-4 py-2"><strong>Your Account is still to Verify</strong></span>
+                    <?php else: ?>
+                        <span class="alert alert-danger px-4 py-2 "><strong>You Account is Deactive !</strong></span>
+                        <?php endif; ?>
             </div>
 
         </section>
     </div>
 </div>
-<?php include('include/footer.php'); ?>
+<?php include('include/footer.php'); 
+
+if(isset($_POST['add_course'])){
+    $user_id = $studen['id'];
+
+    $data = [
+        'student_id' => $student['id'],
+        'course_id' => $_POST['course_id'],
+    ];
+    
+
+    if($course_count == 0){
+        $query = insertRecords('student_course',$data);
+        if($query){
+            redirect('student/mycourse');
+        }
+        else{
+            echo "<script>alert('This course is not available for you')</script>";
+        }
+    }else{
+        echo "<script>alert('This course Already selected')</script>";
+    }
+
+   
+}
+?>

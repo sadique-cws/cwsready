@@ -1,6 +1,8 @@
 
  <?php include('../include/config.php'); 
-   check_session($_SESSION['student'],'../login');
+   if(!check_session($_SESSION['student'])){
+       redirect('../index');
+   }
 
  ?>
 <!DOCTYPE html>
@@ -33,7 +35,7 @@
 </style>
 <?php
 $id = $_SESSION['student'];
-$user = callingRecord('students',"contact = $id or email = $id"); 
+$user = callingRecord('students',"contact = '$id' or email = '$id'"); 
 ?>
 <body style="">
 <div class="header sticky-top" style="background-color: #3a4a52;">

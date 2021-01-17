@@ -1,9 +1,11 @@
  
 <?php include('include/header.php'); 
-
+if(isset($_SESSION['student'])){
+    redirect('index');
+}
 if(isset($_POST['login'])){
     $phone = $_POST['phone'];
-    $password = $_POST['password'];
+    $password = sha1($_POST['password']);
     $query = countRecord('students',"contact = '$phone' or email = '$phone' and password = '$password'");
     if($query > 0){
         $_SESSION['student'] = $phone;
