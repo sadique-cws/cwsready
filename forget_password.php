@@ -7,14 +7,15 @@ $success = "";
 $error_message = "";
 
  if(!empty($_POST["forget"])) {
+    $_SESSION['contact'] =  $_POST["phone"];
 	$result = mysqli_query($connect,"SELECT * FROM students WHERE contact='" . $_POST["phone"] . "'");
 	$count  = mysqli_num_rows($result);
 	if($count>0) {
 		// generate OTP
-		$otp = rand(100000,999999);
+		 $otp = rand(100000,999999);
 		// Send OTP
-		$mail_status = send($_POST["phone"],"your Secure OTP is : ". $otp);
-		
+		//$mail_status = send($_POST["phone"],"your Secure OTP is : ". $otp);
+		$_SESSION['otp'] = $otp;
 			$result = mysqli_query($connect,"INSERT INTO otp_expiry(otp,is_expired,create_at) VALUES ('" . $otp . "', 0, '" . date("Y-m-d H:i:s"). "')");
 			$current_id = mysqli_insert_id($connect);
 			if(!empty($current_id)) {
@@ -26,18 +27,37 @@ $error_message = "";
 	}
 }
 if(!empty($_POST["otp_submit"])) {
-	$result = mysqli_query($connect,"SELECT * FROM otp_expiry WHERE otp='" . $_POST["otp"] . "' AND is_expired!=1 AND NOW() <= DATE_ADD(create_at, INTERVAL 24 HOUR)");
-	$count  = mysqli_num_rows($result);
-	if(!empty($count)) {
-		$result = mysqli_query($connect,"UPDATE otp_expiry SET is_expired = 1 WHERE otp = '" . $_POST["otp"] . "'");
+    if($_SESSION['otp'] == $_POST['otp']){
+        $result = mysqli_query($connect,"UPDATE otp_expiry SET is_expired = 1 WHERE otp = '" . $_POST["otp"] . "'");
+        unset($_SESSION['otp']);
         $success = 2;	
-        
-	} else {
-		$success =1;
+    }else{
+        $success =1;
 		$error_message = "Invalid OTP!";
-	}	
+    }
+	// $result = mysqli_query($connect,"SELECT * FROM otp_expiry WHERE otp ='" . $_POST["otp"] . "' AND is_expired!=1 AND NOW() <= DATE_ADD(create_at, INTERVAL 24 HOUR)");
+    // $count  = mysqli_num_rows($result);
+	// if($count != 0) {
+	// 	$result = mysqli_query($connect,"UPDATE otp_expiry SET is_expired = 1 WHERE otp = '" . $_POST["otp"] . "'");
+    //     $success = 2;	
+        
+	// } else {
+	// 	$success =1;
+	// 	$error_message = "Invalid OTP!";
+	// }	
+}
+if(!empty($_POST['new_password'])){
+    $contact = $_SESSION['contact'];
+    $new_pass = sha1($_POST['new_password']);
+    $result = mysqli_query($connect,"UPDATE students SET password = '$new_pass' WHERE contact = '$contact'");
+    if($result){
+        echo "<script>alert('Password Successfully Updated')</script>";
+        unset($_SESSION['contact']);
+        redirect('login');
+    }
 }
 ?>
+
 <div class="container-fluid pt-5" style="background:url('images/bgs.png');background-attachment:fixed; height:90vh;background-repeat:none; background-size:cover; background-position:50% 50%;">
         <div class="row pt-5">
             <div class="col-lg-4 col-md-4 col-sm-5 mx-auto justify-content-center">
@@ -58,7 +78,13 @@ if(!empty($_POST["otp_submit"])) {
                             <input type="submit" name="otp_submit" value="Validate" class="btn btn-info  w-100">
                         </div>  
                         <?php elseif($success == 2): ?>
-                            <p style="color:#31ab00;">Welcome, You have successfully !</p>
+                            <div class="mb-3">
+                            <label >Enter New Password</label>
+                            <input type="password" name="new_password"  class="form-control bg-transparent text-white shadow-none rounded-0">
+                        </div>
+                        <div class="mb-3">
+                            <input type="submit" name="password_change" value="Change" class="btn btn-info  w-100">
+                        </div>
                         <?php else: ?>
                         <div class="mb-3">
                             <label >Enter Phone No</label>

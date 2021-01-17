@@ -6,7 +6,7 @@ if(isset($_SESSION['student'])){
 if(isset($_POST['login'])){
     $phone = $_POST['phone'];
     $password = sha1($_POST['password']);
-    $query = countRecord('students',"contact = '$phone' or email = '$phone' and password = '$password'");
+    $query = countRecord('students',"contact = '$phone' and password = '$password' or email = '$phone' and password = '$password'");
     if($query > 0){
         $_SESSION['student'] = $phone;
         redirect('student/index');
