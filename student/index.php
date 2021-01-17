@@ -14,8 +14,8 @@
                 <div class="container">
                     <div class="card border-0 shadow-sm bg-light text-black">
                         <div class="card-body">
-                        <h1 class="display-4">Welcome To Code With SadiQ</h1>
-                        <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti placeat reprehenderit pariatur nemo deserunt accusamus odit culpa beatae quidem delectus, magni animi aut consectetur voluptatem dolorum, veniam impedit iusto consequuntur.</p>
+                        <h1 class="display-4">Welcome To Code With SadiQ Family</h1>
+                        <p class="lead">CWS is an on-demand marketplace for top Web programming engineers, developers, consultants, architects, programmers, and tutors. Get your projects built by vetted web programming freelancers or learn from expert mentors with team training & coaching experiences in <strong>Project based training.</strong></p>
                         </div>
                     </div>
                 </div>

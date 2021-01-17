@@ -39,30 +39,56 @@
 <body>
 <div class="header" style="
     background-image: url('images/1.svg'); background-size:cover; background-position:bottom;">
-    <a class="menu-toggle rounded text-white d-lg-none d-block" href="#">
-                <i class="fa fa-bars fa-2x mt-1"></i>
+    <a class="menu-toggle rounded d-lg-none text-white d-block" href="#">
+                <i class="fa fa-bars fa-2x"></i>
             </a>
-            <nav id="sidebar-wrapper">
+            <nav id="sidebar-wrapper" style="background-image: url('images/5.svg');background-color:black; background-size:cover; background-position:bottom;">
+                <?php if(isset($_SESSION['student'])): ?>
                 <ul class="sidebar-nav">
-                    <li class="sidebar-brand shadow-sm">
-                        <a class="js-scroll-trigger text-decoration-none" href="#page-top">Code With SadiQ</a>
+                    <li class="sidebar-brand shadow-sm h-100">
+                        <a class="js-scroll-trigger text-decoration-none" href="#page-top">
+                            <div class="dp bg-danger mx-auto mt-4 rounded-circle" style="width:70px; height:70px;"><img src="images/<?= $student['dp']; ?>" alt="" class="img-fluid rounded-circle"></div>
+                            <h5 class="text-center text-white mt-2"><?= $student['name']; ?></h5>
+                        </a>
+                    </li>
+                    <li class="sidebar-nav-item ">
+                        <a class="js-scroll-trigger" href="student/index.php">Dashboard</a>
                     </li>
                     <li class="sidebar-nav-item">
-                        <a class="js-scroll-trigger" href="#">Home</a>
+                        <a class="js-scroll-trigger" href="student/mycourse.php">Course</a>
                     </li>
                     <li class="sidebar-nav-item">
-                        <a class="js-scroll-trigger" href="#">Login</a>
+                        <a class="js-scroll-trigger" href="student/payments.php">Payment</a>
                     </li>
                     <li class="sidebar-nav-item">
-                        <a class="js-scroll-trigger" href="#">Apply For Addmission</a>
+                        <a class="js-scroll-trigger" href="student/profile.php">Profile</a>
                     </li>
                     <li class="sidebar-nav-item">
-                        <a class="js-scroll-trigger" href="#">About</a>
-                    </li>
-                    <li class="sidebar-nav-item">
-                        <a class="js-scroll-trigger" href="student/logout.php">:ogout</a>
+                        <a class="js-scroll-trigger" href="student/logout.php"><i class="fa fa-power-off text-danger"></i> Logout</a>
                     </li>
                 </ul>
+                <?php else: ?>
+                    <ul class="sidebar-nav">
+                    <li class="sidebar-brand shadow-sm h-100">
+                        <a class="js-scroll-trigger text-decoration-none" href="#page-top">
+                            Code With Sadiq
+                        </a>
+                    </li>
+                    <li class="sidebar-nav-item ">
+                        <a class="js-scroll-trigger" href="index.php">Home</a>
+                    </li>
+                    <li class="sidebar-nav-item">
+                        <a class="js-scroll-trigger" href="apply.php">Apply For Addmission</a>
+                    </li>
+                    <li class="sidebar-nav-item">
+                        <a class="js-scroll-trigger" href="login.php">Login</a>
+                    </li>
+                    <li class="sidebar-nav-item">
+                        <a class="js-scroll-trigger" href="#">Contact</a>
+                    </li>
+                    
+                </ul>
+                <?php endif; ?>
             </nav>
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="header"  style="">
         <div class="container">

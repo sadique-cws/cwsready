@@ -206,9 +206,12 @@ li p {
                         <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto explicabo assumenda ipsa illum asperiores, nemo suscipit numquam iusto nobis nam labore voluptatibus ea autem ab praesentium atque. Excepturi, quibusdam animi!<p>
                         <h3>Selected Course</h3>
                         <div class="interests">
-                            <span class="interests_item">Php</span>
-                            <span class="interests_item">Python</span>
-                            <span class="interests_item">Html</span>
+						<?php  
+							$s_id = $user['id'];
+							$calling = joinRecord('course','student_course','course.id = student_course.course_id',"student_id = $s_id");
+							foreach($calling as $row): ?>
+                            <span class="interests_item"><?= $row['title']; ?></span>
+						<?php endforeach; ?>
                         </div>
                     </div>
 
