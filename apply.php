@@ -1,5 +1,5 @@
  
-<?php include('include/header.php'); ?>
+<?php include('include/header.php'); include('include/sendSms.php'); ?>
     <div class="container-fluid bg-light mt-4 pt-5">
         <div class="row mt-3">
             <div class="col-lg-6 mx-auto mb-4">
@@ -66,11 +66,13 @@
 <?php include('include/footer.php'); ?>
 <?php 
     if(isset($_POST['send'])){
-                
+        $contact = $_POST['contact'];
+        $email = $_POST['email'];
+        echo $student_count = countRecord('students',"contact = '$contact' or email = '$email'");
         $image = $_FILES['dp']['name'];
         $tmp_name = $_FILES['dp']['tmp_name'];
         move_uploaded_file($tmp_name,"images/$image");
-
+        if($student_count == 0):
         $data = [
             'name' => $_POST['name'],
             'father_name' => $_POST['father_name'],
@@ -84,11 +86,18 @@
             'password' => sha1($_POST['password']),
         ];
 
-        $query = insertRecords('students',$data);
+        $query = insertRecords('students',$dataa);
         if($query){
+            
+            $msg = send($_POST["contact"],"Your account is created successfully but still pending for Review");
             redirect(index);
         }else{
             echo "something went wrong";
         }
+        else:
+            echo "<script>alert('Already Have an Account')</script>";
+            redirect('login');
+        endif;
     }
     ?>
+    

@@ -132,7 +132,7 @@
                 <div class="col-lg-7 col">
                 <h1 class="display-4 text-white">Welcome To Code with SadiQ</h1>
                 <p class="lead text-white">CWS is an on-demand marketplace for top Web programming engineers, developers, consultants, architects, programmers, and tutors. Get your projects built by vetted web programming freelancers or learn from expert mentors with team training & coaching experiences in <strong>Project based training.</strong></p>
-                <div class="quote shadow-sm p-3" style="border-left:3px solid white;">
+                <div class="quote shadow p-3" style="border-left:3px solid white;">
                     <p class="lead text-white h6"><strong>We Believe:</strong> Knowledge is not skill. Knowledge plus ten thousand times is skill.</p>
                 </div>
                 </div> 

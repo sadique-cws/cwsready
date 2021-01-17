@@ -209,9 +209,10 @@ li p {
 						<?php  
 							$s_id = $user['id'];
 							$calling = joinRecord('course','student_course','course.id = student_course.course_id',"student_id = $s_id");
+							if($calling != 0):
 							foreach($calling as $row): ?>
                             <span class="interests_item"><?= $row['title']; ?></span>
-						<?php endforeach; ?>
+						<?php endforeach; endif;?>
                         </div>
                     </div>
 

@@ -134,13 +134,14 @@
  
   .post-item{
     transition: .5s all linear;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.25)!important;
   }
   .post-item:hover{
     transition: .5s all linear;
     top:-5px;
     border-radius:10px;
-    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.85)!important;
   }
   .list:hover{
-    background: red;;
+    background: #0009;
   }

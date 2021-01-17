@@ -32,6 +32,7 @@
             width:100%;
         }
     }
+    <?php include('../css/style.php'); ?>
 </style>
 <?php
 $id = $_SESSION['student'];
@@ -46,7 +47,7 @@ $user = callingRecord('students',"contact = '$id' or email = '$id'");
                 <ul class="sidebar-nav">
                     <li class="sidebar-brand shadow-sm h-100">
                         <a class="js-scroll-trigger text-decoration-none" href="#page-top">
-                            <div class="dp bg-danger mx-auto mt-4 rounded-circle" style="width:70px; height:70px;"><img src="../images/<?= $user['dp']; ?>" alt="" class="img-fluid rounded-circle"></div>
+                            <div class="dp bg-danger mx-auto mt-4 rounded-circle" style="width:70px; height:70px;"><img src="../images/<?= $user['dp']; ?>" alt="" class="img-fluid rounded-circle w-100 h-100"></div>
                             <h5 class="text-center text-white mt-2"><?= $user['name']; ?></h5>
                         </a>
                     </li>
