@@ -92,14 +92,13 @@
                     else{ ?>
                         <div class="badge rounded-pill px-3 bg-warning text-dark">pending</div>
                     <?php } ?>
-                    <?php if($payment['pay_request'] == 1){ ?>
+                    <!-- <?php if($payment['pay_request'] == 1){ ?>
                         <div class="badge rounded-pill px-3 text-dark bg-info">accepted</div>
                     <?php }
                     elseif($payment['pay_request'] == 2){ ?>
                         <div class="badge rounded-pill px-3 bg-dabger text-dark">rejected</div>
-                    <?php } ?>
+                    <?php } ?> -->
 
-                    <?= $payment['pay_request']?>
                 </td>
                 <td>
                     <div class="btn-group">

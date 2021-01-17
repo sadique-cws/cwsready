@@ -26,11 +26,11 @@
                     </div>
                     <div class="phone d-flex mt-4">
                         <span class="icon text-muted pt-1"><i class="fa fa-phone"></i></span>
-                        <span class=" ms-2 text-light text-muted">+91 978678686</span>
+                        <span class=" ms-2 text-light text-muted">+91 9546805580</span>
                     </div>
                     <div class="email d-flex mt-3">
                         <span class="icon text-muted pt-1"><i class="fa fa-envelope"></i></span>
-                        <span class=" ms-2 text-light text-muted">sadique@gmail.com</span>
+                        <span class=" ms-2 text-light text-muted">cwspurnea@gmail.com</span>
                     </div>
                     <div class="email d-flex mt-3">
                         <span class="icon text-muted pt-1"><i class="fa fa-map-marker"></i></span>

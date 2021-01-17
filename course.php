@@ -3,7 +3,9 @@
 
 if(isset($_GET['course_id'])){
     $id= $_GET['course_id'];
-    $s_id = $student['id'];
+    if(isset($_SESSION['student'])){
+        $s_id = $student['id'];
+    }
     $record = callingRecord('course',"id = '$id'");
     $course_count = countRecord('student_course',"student_id = '$s_id' and course_id = '$id'");
 }
@@ -136,7 +138,10 @@ if(isset($_GET['course_id'])){
                 <p class="description mt-3"><?= $record['description']; ?><p>
                 
                 <h3 class="mt-2">Select</h3>
-                <?php $active_status = $student['status']; if($active_status == '2'): ?>
+                <?php if(!isset($_SESSION['student'])){ ?>
+                    <a href="login.php" class="btn btn-info">Add Course</a>
+                <?php } else{ ?>
+                    <?php $active_status = $student['status']; if($active_status == '2'): ?>
                 <?php if($course_count == 0): ?>
                 <form action="course.php?course_name=<?= $_GET['course_name']; ?>&course_id=<?= $_GET['course_id']; ?>" method="post">
                     <input type="text" name="course_id" value="<?php echo $_GET['course_id']; ?>" hidden>
@@ -148,7 +153,8 @@ if(isset($_GET['course_id'])){
                     <span class="alert alert-warning px-4 py-2"><strong>Your Account is still to Verify</strong></span>
                     <?php else: ?>
                         <span class="alert alert-danger px-4 py-2 "><strong>You Account is Deactive !</strong></span>
-                        <?php endif; ?>
+                <?php endif; ?>
+                <?php } ?>
             </div>
 
         </section>

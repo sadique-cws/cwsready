@@ -26,7 +26,8 @@
                 $payments=callingRecords("payments JOIN students ON (payments.student_id=students.id and payments.student_id = '$id') JOIN student_course
             ON payments.sc_id=student_course.id JOIN course ON student_course.course_id=course.id", "",
                     'payments.id, students.name, course.title, payments.amount, payments.due_months, payments.date_of_payment, payments.status, payments.pay_request');
-            foreach($payments as $payment){
+            if($payments != 0):
+                    foreach($payments as $payment){
                 ?>
                 <tr>
                     <td><?= $sr +=1;?></td>
@@ -60,7 +61,11 @@
                         <?php endif; ?>
                     </td>
                 </tr>
-            <?php }?>
+            <?php } else:?>
+            <tr>
+                <td>No Records Found</td>
+            </tr>
+            <?php endif; ?>
         </table>
         </div>
 <?php

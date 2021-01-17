@@ -30,7 +30,7 @@
                     </div>
                     <div class="email d-flex mt-3">
                         <span class=" text-muted pt-1"><i class="fa fa-envelope"></i></span>
-                        <span class=" ms-2 text-light text-muted">sadique@gmail.com</span>
+                        <span class=" ms-2 text-light text-muted">cwspurnea@gmail.com</span>
                     </div>
                     <div class="email d-flex mt-3">
                         <span class=" text-muted pt-1"><i class="fa fa-map-marker"></i></span>

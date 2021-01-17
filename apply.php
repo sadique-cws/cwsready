@@ -1,8 +1,8 @@
  
 <?php include('include/header.php'); ?>
-    <div class="container mt-4">
-        <div class="row">
-            <div class="col-lg-8 mx-auto mb-4">
+    <div class="container-fluid bg-light mt-4 pt-5">
+        <div class="row mt-3">
+            <div class="col-lg-6 mx-auto mb-4">
                 <div class="card border-0 shadow-sm">
                     <div class="card-header border-0 bg-white"><h4>Apply Form </h4> <hr></div>
                     <div class="card-body">
