@@ -190,12 +190,10 @@ if(isset($_GET['course_id'])){
 <?php include('include/footer.php'); 
 
 if(isset($_POST['add_course'])){
-    $user_id = $studen['id'];
-
     $data = [
         'student_id' => $student['id'],
         'course_id' => $_POST['course_id'],
-        'status' => '0',
+        'status'=>0
     ];
     
 

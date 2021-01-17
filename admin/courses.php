@@ -32,7 +32,6 @@
                 <td><?= $course['description'];?></td>
                 <td>
                     <div class="btn-group">
-                        <a href="" class="btn btn-sm btn-success">activate</a>
                         <a href="" class="btn btn-info btn-sm mx-1">Edit</a>
                         <a href="" class="btn btn-danger btn-sm">delete</a>
                     </div>

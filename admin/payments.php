@@ -50,7 +50,7 @@
             <th>Student</th>
             <th>course</th>
             <th>fee</th>
-            <th>month</th>
+            <th>Payment Generate date</th>
             <?php if(isset($_GET['filter'])):?>
             <th>Date of payment</th>
             <?php endif;?>
@@ -75,7 +75,7 @@
                 <td><?= $payment['name'];?></td>
                 <td><?= $payment['title'];?></td>
                 <td><?= $payment['amount'];?></td>
-                <td><?php $date = new DateTime($payment['due_months']);echo $date->format('m/Y')?></td>
+                <td><?php $date = new DateTime($payment['due_months']);echo $date->format('d/m/Y')?></td>
 
                 <?php if(isset($_GET['filter'])):?>
                     <td>

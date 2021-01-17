@@ -44,6 +44,9 @@ if(!check_session($_SESSION['admin'])){
                 </li>
                 <?php endif;?>
                 <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="studentcourses.php">Students course</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="deactivestudents.php">Deactivated students</a>
                 </li>
                 <li class="nav-item dropdown">
