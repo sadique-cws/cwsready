@@ -213,7 +213,7 @@ li p {
                             <span class="interests_item"><?= $row['title']; ?></span>
 						<?php endforeach; endif;?>
                         </div>
-						<a href="" class="btn btn-info btn-sm mt-5">edit</a>
+						<a href="" class="btn btn-info btn-sm mt-5" data-bs-toggle="modal" data-bs-target="#update">edit</a>
                     </div>
 						
                 </section>
@@ -222,4 +222,95 @@ li p {
         </div>
     </div>
 </div>
-<?php include('include/footer.php'); ?>
+
+<!-- Modal -->
+<div class="modal fade" id="update" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content rounded-0">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Update Profile</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+	  <?php $student_id= $user['id']; $student = callingRecord('students',"id = '$student_id'"); ?>
+		<form action="profile.php" method="post">
+			<div class="mb-3">
+				<label for="name">Name</label>
+				<input type="text" name="name" id="name" class="form-control rounded-0 shadow-none" value="<?= $student['name']; ?>" required>
+			</div>
+			<div class="mb-3">
+				<label for="f_name">Father's Name</label>
+				<input type="text" name="father_name" id="f_name" class="form-control rounded-0 shadow-none" value="<?= $student['father_name']; ?>" required>
+			</div>
+			<div class="row">
+				<div class="mb-3 col">
+					<label for="contact">Contact</label>
+					<input type="text" name="contact" id="contact" class="form-control rounded-0 shadow-none" value="<?= $student['contact']; ?>" required>
+				</div>
+				<div class="mb-3 col">
+					<label for="email">Email</label>
+					<input type="email" name="email" id="email" class="form-control rounded-0 shadow-none" value="<?= $student['email']; ?>" required>
+				</div>
+			</div>
+			<div class="mb-3">
+				<label for="gender">Gender</label>
+				<select name="gender" id="gender" class="form-control rounded-0" required>
+					<option value="" selected disabled hidden>Select Gender</option>
+					<option value="m">Male</option>
+					<option value="f">Female</option>
+					<option value="0">Others</option>
+				</select>
+			</div>
+			<div class="mb-3">
+				<label for="edu">Education</label>
+				<input type="text" name="education" class="form-control shadow-none rounded-0" required value="<?= $student['education']; ?>">
+			</div>
+			<div class="mb-3">
+				<label for="dob">DOB</label>
+				<input type="date" name="dob" id="dob" class="form-control rounded-0 shadow-none" required value="<?= $student['dob']; ?>">
+			</div>
+			<div class="mb-3">
+				<label for="address">Address</label>
+				<textarea name="address" id="address" cols="30" rows="3" class="form-control rounded-0" required><?= $student['address']; ?></textarea>
+			</div>
+			<div class="mb-3">
+				<input type="submit" name="update" value="Submit" class="btn btn-info w-100 rounded-0">
+			</div>
+		</form>
+      </div>
+    </div>
+  </div>
+</div>
+<?php include('include/footer.php'); 
+if(isset($_POST['update'])){
+	$contact = $_POST['contact'];
+	$email = $_POST['email'];
+	$student_count = countRecord('students',"contact = '$contact' or email = '$email'");
+	
+	if($student_count != 0):
+
+		$name = $_POST['name'];
+		$father_name = $_POST['father_name'];
+		$contact = $_POST['contact'];
+		$email = $_POST['email'];
+		$gender = $_POST['gender'];
+		$education = $_POST['education'];
+		$dob = $_POST['dob'];
+		$address = $_POST['address'];
+		$student_id = $user['id'];
+		$query = mysqli_query($connect,"update students set name = '$name' , father_name = '$father_name', contact = '$contact', email = '$email', gender = '$gender', education = '$education', dob = '$dob', address = '$address' where id = '$student_id'");
+		
+	if($query){
+		echo "<script>alert('Profile Successfully Updated')</script>";
+		redirect('profile');
+	}else{
+		echo "<script>alert('Profile Not Updated')</script>";
+		redirect('profile');
+	}
+	else:
+		echo "<script>alert('Something Went Wrong')</script>";
+		redirect('profile');
+	endif;
+}
+
+?>
