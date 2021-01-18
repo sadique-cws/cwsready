@@ -36,15 +36,19 @@ if(!check_session($_SESSION['admin'])){
                 <li class="nav-item">
                     <a class="nav-link" aria-current="page" href="payments.php">Payments</a>
                 </li>
-                <?php $count =  countRecord("payments JOIN students ON (payments.student_id=students.id and payments.status='0' and payments.pay_request='1') JOIN student_course
-         ON payments.sc_id=student_course.id JOIN course ON student_course.course_id=course.id");
+                <?php $count =  countRecord("payments JOIN students ON (payments.student_id=students.id and payments.status='0' and payments.pay_request='1')");
                 if($count>0):?>
                 <li class="nav-item">
                     <a class="nav-link text-danger" aria-current="page" href="paidrequest.php">Paid Request (<?= $count?>)</a>
                 </li>
                 <?php endif;?>
+                <?php $req_count =  countRecord("student_course JOIN students ON (student_course.student_id=students.id and student_course.status='0' and student_course.course_request='1' and students.status='2')");
+                ?>
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="studentcourses.php">Students course</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active <?php if($req_count>0):?> text-danger<?php endif;?>" aria-current="page" href="courserequest.php">Request for course(<?= $req_count?>)</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="deactivestudents.php">Deactivated students</a>

@@ -13,7 +13,7 @@
     <table class="table table-stripped shadow-sm">
         <tr class="bg-secondary text-light text-capitalize">
             <th>id</th>
-            <th>name</th>
+            <th>student</th>
             <th>father name</th>
             <th>contact</th>
             <th>e-mail</th>
@@ -32,7 +32,12 @@
             ?>
             <tr >
                 <td><?= $student['id'];?></td>
-                <td><?= $student['name'];?></td>
+                <td>
+                    <card class="border-rounded-circle border-1">
+                        <img class="card-img-top" src="../images/<?= $student['dp']?>" style="width: 30px; height: 30px;  object-fit: contain" alt="">
+                    </card>
+                    <?= $student['name'];?>
+                </td>
                 <td><?= $student['father_name'];?></td>
                 <td><?= $student['contact'];?></td>
                 <td><?= $student['email'];?></td>
@@ -43,7 +48,7 @@
                 <td>
                     <div class="btn-group">
 
-                        <a href="studentcourses.php" target="_blank" class="btn btn-info btn-sm">view course</a>
+                        <a href="studentcourses.php?id=<?= $student['id'];?>" target="_blank" class="btn btn-info btn-sm">view course</a>
                         <a href="payments.php?id=<?= $student['id']?>" target="_blank" class="btn btn-warning mx-1 btn-sm">view payment</a>
                         <form action="students.php" method="post">
                             <input type="hidden" name="student_id" value="<?= $student['id']; ?>">

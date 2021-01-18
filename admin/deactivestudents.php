@@ -30,8 +30,12 @@
             ?>
             <tr >
                 <td><?= $student['id'];?></td>
-                <td><?= $student['name'];?></td>
-                <td><?= $student['father_name'];?></td>
+                <td>
+                    <card class="border-rounded-circle border-1">
+                        <img class="card-img-top" src="../images/<?= $student['dp']?>" style="width: 30px; height: 30px;  object-fit: contain" alt="">
+                    </card>
+                    <?= $student['name'];?>
+                </td>                <td><?= $student['father_name'];?></td>
                 <td><?= $student['contact'];?></td>
                 <td><?= $student['email'];?></td>
                 <td><?= $student['gender'];?></td>

@@ -38,7 +38,6 @@
                     <?php else:?>
                         href="payments.php?id=<?= $id?>&filter=paid_records"
                     <?php endif;?>
-                   href="payments.php?filter=paid_records"
                    class="btn btn-primary btn-sm shadow-sm px-4" ><strong>View paid records</strong></a>
             <?php }?>
             <a href="updatepayments.php" class="btn btn-sm btn-info shadow-sm float-end px-4"><strong>Update Payments</strong></a>
@@ -62,18 +61,22 @@
         if($id==null):
         $payments=callingRecords("payments JOIN students ON (payments.student_id=students.id and payments.status='$pay_status') JOIN student_course
          ON payments.sc_id=student_course.id JOIN course ON student_course.course_id=course.id", "",
-    'payments.id, students.name, course.title, payments.amount, payments.due_months, payments.date_of_payment, payments.status');
+    'payments.id, students.name, course.title, students.dp, payments.amount, payments.due_months, payments.pay_request, payments.date_of_payment, payments.status');
         else:
             $payments=callingRecords("payments JOIN students ON (payments.student_id=students.id and payments.status='$pay_status' and students.id='$id') JOIN student_course
          ON payments.sc_id=student_course.id JOIN course ON student_course.course_id=course.id", "",
-                'payments.id, students.name, course.title, payments.amount, payments.pay_request, payments.due_months, payments.date_of_payment, payments.status');
+                'payments.id, students.name, students.dp, course.title, payments.amount, payments.pay_request, payments.due_months, payments.date_of_payment, payments.status');
         endif;
         foreach($payments as $payment){
             ?>
             <tr>
                 <td><?= $payment['id'];?></td>
-                <td><?= $payment['name'];?></td>
-                <td><?= $payment['title'];?></td>
+                <td>
+                    <card class="border-rounded-circle border-1">
+                        <img class="card-img-top" src="../images/<?= $payment['dp']?>" style="width: 30px; height: 30px;  object-fit: contain" alt="">
+                    </card>
+                    <?= $payment['name'];?>
+                </td>                <td><?= $payment['title'];?></td>
                 <td><?= $payment['amount'];?></td>
                 <td><?php $date = new DateTime($payment['due_months']);echo $date->format('d/m/Y')?></td>
 
@@ -92,23 +95,23 @@
                     else{ ?>
                         <div class="badge rounded-pill px-3 bg-warning text-dark">pending</div>
                     <?php } ?>
-                    <!-- <?php if($payment['pay_request'] == 1){ ?>
-                        <div class="badge rounded-pill px-3 text-dark bg-info">accepted</div>
+                    <?php if($payment['pay_request'] == 1){ ?>
+                        <div class="badge rounded-pill px-3 bg-success">accepted</div>
                     <?php }
                     elseif($payment['pay_request'] == 2){ ?>
-                        <div class="badge rounded-pill px-3 bg-dabger text-dark">rejected</div>
-                    <?php } ?> -->
+                        <div class="badge rounded-pill px-3 bg-danger">rejected</div>
+                    <?php } ?>
 
                 </td>
                 <td>
                     <div class="btn-group">
                         <?php if($payment['status']=='1'){?>
-                            <form action="payments.php" method="post">
+                            <form target="_blank" action="update.php" method="post">
                                 <input type="hidden" name="pay_id" value="<?= $payment['id'];?>">
                                 <button class="btn btn-danger btn-sm px-3" name="undo_pay">undo pay</button>
                             </form>
                         <?php } else{?>
-                            <form action="payments.php" method="post">
+                            <form target="_blank" action="update.php" method="post">
                                 <input type="hidden" name="pay_id" value="<?= $payment['id'];?>">
                                 <button class="btn btn-success btn-sm px-3" name="pay">pay</button>
                             </form>
@@ -119,20 +122,7 @@
         <?php }?>
     </table>
 </div>
-<?php include "footer.php";
-if(isset($_POST['pay'])){
-    $now = new DateTime();
-    $date = $now->format('Y-m-d');
-    $id = $_POST['pay_id'];
-    updateRecord('payments', "status='1', date_of_payment='$date'", "id='$id'");
-    redirect('payments');
-}
-if(isset($_POST['undo_pay'])){
-    $id = $_POST['pay_id'];
-    updateRecord('payments', "status='0', date_of_payment=null", "id='$id'");
-    redirect('payments');
-}
-?>
+<?php include "footer.php";?>
 
 </body>
 </html>
