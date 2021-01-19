@@ -39,19 +39,19 @@
                 </div>
                 <div class="col ">
                 <h5 class="text-white">Connect With Us</h5>
-                    <a class="facebook d-flex mt-3 text-decoration-none" href="https://www.facebook.com/cwspurnea/" >
+                    <a class="facebook d-flex mt-3 text-decoration-none" target="_blank" href="https://www.facebook.com/cwspurnea/" >
                         <span class=" pt-1"><i class="fa fa-facebook-square fa-2x"></i></span>
                         <span class=" ms-2 mt-2">facebook</span>
                     </a>
-                    <a class="linkedin d-flex mt-3 text-decoration-none" href="" >
+                    <a class="linkedin d-flex mt-3 text-decoration-none" target="_blank" href="" >
                         <span class=" pt-1"><i class="fa fa-linkedin-square fa-2x"></i></span>
                         <span class=" ms-2 mt-2">Linkedin</span>
                     </a>
-                    <a class="github d-flex mt-3 text-decoration-none" href="https://github.com/sadique-cws" >
+                    <a class="github d-flex mt-3 text-decoration-none" target="_blank" href="https://github.com/sadique-cws" >
                         <span class=" pt-1"><i class="fa fa-github-square fa-2x"></i></span>
                         <span class=" ms-2 mt-2">Git Hub</span>
                     </a>
-                    <a class="twitter d-flex mt-3 text-decoration-none" href="" >
+                    <a class="twitter d-flex mt-3 text-decoration-none" target="_blank" href="" >
                         <span class=" pt-1"><i class="fa fa-twitter-square fa-2x"></i></span>
                         <span class=" ms-2 mt-2">Twitter</span>
                     </a>
@@ -60,7 +60,7 @@
             </div>
         </div>
         <div class="container border-top border-secondary py-3 pb-0 justify-content-middle">
-            <h6 class="text-muted fw-light">Developed By <a href="https://github.com/vikas-vm" class="text-light text-decoration-none">Vikas</a> & <a href="https://github.com/alok9038" class="text-light text-decoration-none">Alok</a> (student of CWS)</h6>
+            <h6 class="text-muted fw-light">Developed By <a href="https://github.com/vikas-vm" target="_blank" class="text-light text-decoration-none">Vikas</a> & <a href="https://github.com/alok9038" target="_blank" class="text-light text-decoration-none">Alok</a> (student of CWS)</h6>
         </div>
     </footer>
     <!-- JavaScript Bundle with Popper -->

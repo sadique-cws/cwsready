@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!doctype html>
 <html lang="en">
 <head>
@@ -19,6 +20,10 @@ if(isset($_GET['filter']) == 'deactivated') {
     $active_status = 1;
 }
 ?>
+=======
+
+<?php include "header.php"?>
+>>>>>>> 9475190 (session redirect)
 <div class="container mt-5">
     <div class="card border-0 my-1 shadow-sm bg-light">
         <div class="card-body py-1">
@@ -111,6 +116,11 @@ if(isset($_GET['filter']) == 'deactivated') {
         <?php endforeach; ?>
     </table>
 </div>
+<<<<<<< HEAD
 <?php include "footer.php";?>
 </body>
 </html>
+=======
+<?php include "footer.php"?>
+
+>>>>>>> 9475190 (session redirect)

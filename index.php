@@ -20,6 +20,7 @@ background-image: linear-gradient(315deg, #485461 0%, #28313b 74%);"">
                         <img src="images/<?= $course['image']; ?>" class="card-img-top w-100 img-fluid img-responsive" style="object-fit:cover; height:263px;" alt="">
                         <div class="card-body">
                             <h4><?= $course['title']; ?></h4>
+                            <p class="text-success h6">₹ 700 /- month</p>
                             <p class="small"><i class="fa text-dark fa-clock-o"></i> about 2 months</p>
                             <!-- <span class="d-flex">
                                 <div class="box"><img src="images/2002.jpeg" alt="" style="height:50px; width:50px;" class="img-fluid rounded-circle"></div>

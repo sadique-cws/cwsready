@@ -188,6 +188,12 @@ li p {
             </div> -->
 
             <div class="col">
+				<?php if(isset($_SESSION['msg'])): ?>
+					<div class="alert alert-success">Profile Successfully Updated</div>
+				<?php unset($_SESSION['msg']); endif; ?>
+				<?php if(isset($_SESSION['error_msg'])): ?>
+					<div class="alert alert-danger"><?= $_SESSION['error_msg']; ?></div>
+				<?php unset($_SESSION['error_msg']); endif; ?>
                 <section class="profile_container">
                     <div class="profile_img_section">
                         <img class="profile_img-LG" src="../images/<?= $user['dp']; ?>" />
@@ -207,11 +213,13 @@ li p {
                         <div class="interests">
 						<?php  
 							$s_id = $user['id'];
-							$calling = joinRecord('course','student_course','course.id = student_course.course_id',"student_id = $s_id");
+							$calling = joinRecord('course','student_course','course.id = student_course.course_id',"student_id = $s_id and status = 1");
 							if($calling != 0):
 							foreach($calling as $row): ?>
                             <span class="interests_item"><?= $row['title']; ?></span>
-						<?php endforeach; endif;?>
+						<?php endforeach; else:?>
+							<span class="interests_item">No course Selected Yet</span>
+						<?php endif; ?>
                         </div>
 						<a href="" class="btn btn-info btn-sm mt-5" data-bs-toggle="modal" data-bs-target="#update">edit</a>
                     </div>
@@ -301,14 +309,15 @@ if(isset($_POST['update'])){
 		$query = mysqli_query($connect,"update students set name = '$name' , father_name = '$father_name', contact = '$contact', email = '$email', gender = '$gender', education = '$education', dob = '$dob', address = '$address' where id = '$student_id'");
 		
 	if($query){
-		echo "<script>alert('Profile Successfully Updated')</script>";
+		//echo "<script>alert('Profile Successfully Updated')</script>";
+		$_SESSION['msg'] = "Profile Successfully Updated";
 		redirect('profile');
 	}else{
-		echo "<script>alert('Profile Not Updated')</script>";
+		$_SESSION['error_msg'] = "Profile Not Updated !";
 		redirect('profile');
 	}
 	else:
-		echo "<script>alert('Something Went Wrong')</script>";
+		$_SESSION['error_msg'] = "Something Went Wrong";
 		redirect('profile');
 	endif;
 }

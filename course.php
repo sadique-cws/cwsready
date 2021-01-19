@@ -5,9 +5,10 @@ if(isset($_GET['course_id'])){
     $id= $_GET['course_id'];
     if(isset($_SESSION['student'])){
         $s_id = $student['id'];
+        $course_count = countRecord('student_course',"student_id = '$s_id' and course_id = '$id'");
     }
     $record = callingRecord('course',"id = '$id'");
-    $course_count = countRecord('student_course',"student_id = '$s_id' and course_id = '$id'");
+    
 }
 ?>
 <style>
@@ -110,7 +111,7 @@ if(isset($_GET['course_id'])){
         .profile_img-LG {
             width: 300px;
             height: 300px;
-            border-radius: 40px;
+            border-radius: 25px;
         }
 
         
@@ -124,8 +125,8 @@ if(isset($_GET['course_id'])){
     }
 
 </style>
-<div class="container-fluid mt-5 pt-5 bg-light">
-    <div class="container card border-0 shadow-sm mb-5 pb-5" style="border-radius:35px;">
+<div class="container-fluid pt-5 bg-light">
+    <div class="container mt-5 card border-0 shadow-sm mb-5 pb-5" style="border-radius:35px;">
         <section class="profile_container">
             <div class="profile_img_section">
                 <img class="profile_img-LG" src="images/<?= $record['image']; ?>" />
@@ -134,12 +135,13 @@ if(isset($_GET['course_id'])){
             <div class="profile_desc_section">
                 <h2><?= $record['title']; ?></h2>
                 <h3 class="h5 text-dark"></h3>
-                <h6 class="text-success">Rs. 700 /- month</h6>
+                <h6 class="text-success">₹ 700 /- month</h6>
                 <p class="description mt-3"><?= $record['description']; ?><p>
                 
                 <h3 class="mt-2">Select</h3>
                 <?php if(!isset($_SESSION['student'])){ ?>
                     <a href="login.php" class="btn btn-info">Add Course</a>
+                    <?php $_SESSION['redirect'] = $_SERVER['REQUEST_URI']; ?>
                 <?php } else{ ?>
                     <?php $active_status = $student['status']; if($active_status == '2'): ?>
                 <?php if($course_count == 0): ?>
@@ -163,7 +165,7 @@ if(isset($_GET['course_id'])){
     <div class="container">
             <div class="head mb-3" style="border-bottom: 2px solid  #485461;">
                 <div class="d-inline-flex py-2 px-4 text-white bd-highlight" style=" background-color:  #485461;">Related Courses</div>
-                <a href="" class="text-muted text-decoration-none float-end">view all</a>
+                <a href="#" class="text-muted text-decoration-none float-end">view all</a>
             </div>
 
             <div class="row row-cols-1 row-cols-lg-4 row-cols-md-3 row-cols-sm-2">
@@ -174,6 +176,7 @@ if(isset($_GET['course_id'])){
                             <img src="images/<?= $course['image']; ?>" class="card-img-top w-100 img-fluid img-responsive" style="object-fit:cover; height:263px;" alt="">
                             <div class="card-body">
                                 <h4><?= $course['title']; ?></h4>
+                                <p class="text-success h6">₹ 700 /- month</p>
                                 <p class="small"><i class="fa text-dark fa-clock-o"></i> about 2 months</p>
                                 <!-- <span class="d-flex">
                                     <div class="box"><img src="images/2002.jpeg" alt="" style="height:50px; width:50px;" class="img-fluid rounded-circle"></div>
@@ -183,7 +186,7 @@ if(isset($_GET['course_id'])){
                         </div>
                     </a>
                 </div>
-            <?php endforeach; ?>
+            <?php endforeach;  ?>
             </div>
         </div>
 </div>

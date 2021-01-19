@@ -34,8 +34,10 @@
      /* background-image: linear-gradient(315deg, #485461 0%, #28313b 74%); */
     
 }
+
 <?php include("css/style.php"); ?>
 </style>
+<?php $_SESSION['logout_redirect'] = $_SERVER['REQUEST_URI']; ?>
 <body>
 <div class="header" style="
     background-image: url('images/1.svg'); background-size:cover; background-position:bottom;">

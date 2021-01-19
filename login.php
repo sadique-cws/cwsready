@@ -9,6 +9,11 @@ if(isset($_POST['login'])){
     $query = countRecord('students',"contact = '$phone' and password = '$password' or email = '$phone' and password = '$password'");
     if($query > 0){
         $_SESSION['student'] = $phone;
+        if(isset($_SESSION['redirect'])){
+            $redirect = $_SESSION['redirect'];
+            echo "<script>open('$redirect','_self')</script>";
+            unset($_SESSION['redirect']);
+        }
         redirect('student/index');
     }
     else{

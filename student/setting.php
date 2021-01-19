@@ -12,12 +12,15 @@ if(isset($_POST['update'])){
     if($check != 0){
         $result = mysqli_query($connect,"UPDATE students SET password = '$new_password' WHERE id = '$s_id'");
         if($result){
-            echo "<script>alert('Password Successfully Updated')</script>";
+            $_SESSION['msg'] = "Password Successfully Updated";
+		    redirect('setting');
         }else{
-            echo "<script>alert('Something Went Wrong')</script>";
+            $_SESSION['error_msg'] = 'Password Updation failed. Please Try again';
+            redirect('setting');
         }
     }else{
-        echo "<script>alert('Kuch Toh Garbar h.!')</script>";
+        $_SESSION['error_msg'] = 'Kuch toh Garbar hai..!';
+        redirect('setting');
     }
 }
 
@@ -28,6 +31,12 @@ if(isset($_POST['update'])){
         <?php include('include/sidebar.php'); ?>
         <div class="p-5 content2">
             <div class="container mt-5">
+            <?php if(isset($_SESSION['msg'])): ?>
+					<div class="alert alert-success">Profile Successfully Updated</div>
+				<?php unset($_SESSION['msg']); endif; ?>
+                <?php if(isset($_SESSION['error_msg'])): ?>
+					<div class="alert alert-success">Profile Successfully Updated</div>
+				<?php endif; ?>
                 <div class="card border-light">
                     <div class="card-header border-light rounded-0"><h5 class="text-muted">Change Password</h5></div>
                     <div class="card-body">
