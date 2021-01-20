@@ -77,22 +77,6 @@ if(isset($_GET['course_id'])){
         color: rgba(34, 34, 34, 0.5);
     }
 
-    ul {
-        padding: 0px;
-    }
-
-    li {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        margin-bottom: 5px;
-    }
-
-    li p {
-        margin-left: 30px;
-        color: rgba(34, 34, 34, 0.5);
-    }
-
     @media screen and (max-width: 1000px) {
         .profile_container,
         .info,
@@ -169,7 +153,7 @@ if(isset($_GET['course_id'])){
             </div>
 
             <div class="row row-cols-1 row-cols-lg-4 row-cols-md-3 row-cols-sm-2">
-                <?php $courses = callingRecords('course',"id != $id"); foreach($courses as $course): ?>
+                <?php $courses = mysqli_query($connect,"SELECT * FROM course where id!= $id order by RAND() limit 4"); while($course = mysqli_fetch_array($courses)): ?>
                 <div class="col mb-3">
                     <a href="course.php?course_name=<?= $course['title']; ?>&course_id=<?= $course['id']; ?>" class="text-decoration-none text-dark">
                         <div class="card border-0 shadow-sm post-item">
@@ -186,7 +170,7 @@ if(isset($_GET['course_id'])){
                         </div>
                     </a>
                 </div>
-            <?php endforeach;  ?>
+            <?php endwhile;  ?>
             </div>
         </div>
 </div>

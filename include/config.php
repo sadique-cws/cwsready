@@ -4,6 +4,13 @@
 $connect = mysqli_connect('localhost','root','','cwsready');
 session_start();
 //insertion
+function test_input($data) {
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
+}
+
 function insertRecords($table, $fields){
     global $connect;
 

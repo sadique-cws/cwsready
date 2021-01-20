@@ -92,7 +92,7 @@
                 </ul>
                 <?php endif; ?>
             </nav>
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="header"  style="">
+    <nav class="navbar navbar-expand-lg navbar-expand-sm navbar-expand-md navbar-dark fixed-top" id="header"  style="">
         <div class="container">
             <a href="index.php" class="navbar-brand">Code With SadiQ</a>
             <ul class="navbar-nav">
@@ -132,8 +132,8 @@
         <div class="container py-5">
             <div class="row">
                 <div class="col-lg-7 col">
-                <h1 class="display-4 text-white">Welcome To Code with SadiQ</h1>
-                <p class="lead text-white">CWS is an on-demand marketplace for top Web programming engineers, developers, consultants, architects, programmers, and tutors. Get your projects built by vetted web programming freelancers or learn from expert mentors with team training & coaching experiences in <strong>Project based training.</strong></p>
+                <h1 class="h1 fw-light text-white">Welcome To Code with SadiQ</h1>
+                <p class=" text-white">CWS is an on-demand marketplace for top Web programming engineers, developers, consultants, architects, programmers, and tutors. Get your projects built by vetted web programming freelancers or learn from expert mentors with team training & coaching experiences in <strong>Project based training.</strong></p>
                 <div class="quote shadow p-3" style="border-left:3px solid white;">
                     <p class="lead text-white h6"><strong>We Believe:</strong> Knowledge is not skill. Knowledge plus ten thousand times is skill.</p>
                 </div>
